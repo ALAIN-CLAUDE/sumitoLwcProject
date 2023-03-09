@@ -1,0 +1,82 @@
+<aura:component >
+	<aura:attribute name="account" type="Account" access="public"/>
+    <aura:attribute name="options_Currency_to_adopt__c" type="List" access="public"/>
+    <aura:attribute name="options_Delivering_Plant__c" type="List" access="public"/>
+    <aura:attribute name="options_Delivery_Priority__c" type="List" access="public"/>
+    <aura:attribute name="options_Distribution_Channel__c" type="List" access="public"/>
+    <aura:attribute name="options_Group_4__c" type="List" access="public"/>
+    <aura:attribute name="options_Group_5__c" type="List" />
+    <aura:attribute name="options_Payment_Terms__c" type="List" access="public"/>
+    <aura:attribute name="options_Price_Group__c" type="List" access="public"/>
+    
+	<lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Name}" required="true" label="Account Name" />
+    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Trading_As_Name__c}" required="true" label="Trading As Name" />
+    
+    <lightning:select class="slds-size_1-of-2 field" label="Distribution Channel" required="true" value="{!v.account.Distribution_Channel__c}" >
+        <aura:iteration items="{!v.options_Distribution_Channel__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,'DM')}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select class="slds-size_1-of-2 field" label="Currency" value="{!v.account.Currency_to_adopt__c}" required="true">
+        <aura:iteration items="{!v.options_Currency_to_adopt__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,'ZAR')}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:accordion aura:id="accordion" activeSectionName="sections" class="accordion">
+        <lightning:accordionSection name="salesmanReport" label="Salesman's Report">
+            <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                <lightning:input class="slds-size_1-of-2 field" name="name" type="number" value="{!v.account.Dunlop_Commitment__c}" label="Dunlop Commitment" />
+                <lightning:input class="slds-size_1-of-2 field" name="name" type="number" value="{!v.account.Turnover_Potential__c}" label="Turn Over Potential" />
+                
+                <lightning:select class="slds-size_1-of-2 field" label="Delivery Priority" required="true" value="{!v.account.Delivery_Priority__c}" >
+                    <aura:iteration items="{!v.options_Delivery_Priority__c}" var="item">
+                        <option text="{!item.label}" value="{!item.value}"/>
+                    </aura:iteration>
+                </lightning:select>
+                
+                <lightning:select class="slds-size_1-of-2 field" label="Price Group" value="{!v.account.Price_group__c}" required="true">
+                    <aura:iteration items="{!v.options_Price_Group__c}" var="item">
+                        <option text="{!item.label}" value="{!item.value}"/>
+                    </aura:iteration>
+                </lightning:select>
+                
+                <lightning:select class="slds-size_1-of-2 field" label="Classification 1" value="{!v.account.Group_4__c}" required="true">
+                    <aura:iteration items="{!v.options_Group_4__c}" var="item">
+                        <option text="{!item.label}" value="{!item.value}"/>
+                    </aura:iteration>
+                </lightning:select>
+                
+                <lightning:select class="slds-size_1-of-2 field" label="Payment Terms" value="{!v.account.Payment_terms__c}" required="true">
+                    <aura:iteration items="{!v.options_Payment_Terms__c}" var="item">
+                        <option text="{!item.label}" value="{!item.value}"/>
+                    </aura:iteration>
+                </lightning:select>
+                
+                <lightning:select class="slds-size_1-of-2 field" label="Classification 2" value="{!v.account.Group_5__c}" required="true">
+                    <aura:iteration items="{!v.options_Group_5__c}" var="item">
+                        <option text="{!item.label}" value="{!item.value}"/>
+                    </aura:iteration>
+                </lightning:select>
+                
+                <lightning:input class="slds-size_1-of-2 field" name="name" type="number" value="{!v.account.Credit_Limit_Requested__c}" label="Credit Limit Requested" />
+            </div>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="minPremReq" label="Minimum Premises Requirement">
+            <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="80m2 Under Cover Fitting Area" name="fittingArea" checked="{!v.account.FittingArea__c}"/>
+                <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="Counter and Reception Area" name="counter" checked="{!v.account.Counter_and_Reception_Area__c}"/>
+                <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="Restrooms" name="restrooms" checked="{!v.account.Restrooms__c}"/>
+            </div>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="minEquipReq" label="Minimum Equipment Requirements">
+            <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="1 x Fitting Machine" name="fitMachine" checked="{!v.account.Fitting_Machine__c}"/>
+                <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="1 x Compressor" name="compressor" checked="{!v.account.Compressor__c}"/>
+                <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="2X Lower Level Lifts" name="lifts" checked="{!v.account.Lower_Level_Lifts__c}"/>
+                <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="1X Electric Balancing Machine" name="blanceMachine" checked="{!v.account.Electric_Balancing_Machine__c}"/>
+            </div>
+        </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

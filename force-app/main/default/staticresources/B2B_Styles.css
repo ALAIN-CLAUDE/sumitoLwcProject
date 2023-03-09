@@ -1,0 +1,160 @@
+.comm-user-profile-menu__trigger-p, .slds-truncate slds-text-title_bold{
+    color: #fff;
+}
+
+.get-in-touch{
+    padding: 50px 0 50px 150px;
+}
+
+.get-in-touch a{
+    padding: 20px;
+    background-color: #1B89C9;
+    color: #fff !important;
+}
+
+.navBarContainer{
+    background: none !important;
+}
+
+.horizontalMenuItem{
+    color: #fff !important;
+}
+
+.forceCommunityRichText .uiOutputRichText .sfdcCbVideoContainer{
+    max-width: 800px;
+    margin: 100px auto;
+}
+
+
+
+.js-content .slds-hyphenate .slds-col .slds-grid .slds-grid_vertical .slds-align-center{
+    width: 100%;
+}
+
+.js-content-subtitle .slds-rich-text-editor__output a{
+    padding: 100%;
+    color: transparent;
+
+}
+
+
+.footer-container{
+    background-color: #4DB2F5;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
+}
+
+.footer-container .links-column{
+    padding: 0 40px;
+}
+
+.footer-container .links a{
+    color: #fff;
+}
+.footer-container .links a:hover{
+    color: #fff;
+}
+
+
+.footer-container .footer-logo{
+    margin: 15px 0 20px;
+}
+
+.footer-container .links .heading{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0 10px;
+}
+
+.footer-container .links li{
+    padding: 0;
+}
+
+.footer-container .links ul{
+    padding: 0;
+}
+
+.footer-container .links li::before{
+    display: none;
+}
+
+.comm-user-profile-menu .slds-dropdown-trigger .comm-user-profile-menu__dropdown-ctn{
+    background-color: #4DB2F5;
+    padding: 10px;
+}
+
+
+.slds-dropdown__list .slds-dropdown__item a{
+    background-color: #4DB2F5;
+    color: #fff;
+}
+
+.slds-dropdown__list .slds-dropdown__item a:hover{
+    color: #fff;
+}
+
+.comm-page-home [data-region-name="footer"] .ui-widget{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 60px !important;
+}
+
+[data-region-name="footer"] .ui-widget:last-of-type{
+    border-bottom: none;
+}
+
+.comm-page-login-home .salesforceIdentityLoginBody2 .cCenterPanel{
+    min-width: 350px;
+    text-align: center;
+}
+
+.comm-page-login-home .salesforceIdentityLoginBody2 .inputContainer{
+    text-align: left;
+}
+
+.comm-page-login-home .salesforceIdentityLoginBody2 .loginButton{
+    border: 1px solid #fff;
+}
+
+.cCenterPanel .salesforceIdentityForgotPassword2 .loginButton{
+    border: 1px solid #fff;
+}
+
+.comm-page-login-home .salesforceIdentityLoginBody2 .communityLogo{
+    margin-bottom: 25px;
+    width: 70%;
+}
+
+b2b_buyer_cart-add-all-items-to-cart-button button{
+text-transform: capitalize !important;
+font-size: 13px;
+}
+
+b2b_buyer_cart-add-to-cart-button{
+    flex-basis: 30% !important;
+}
+
+b2b_buyer_cart-add-to-cart-button button{
+    text-transform: capitalize !important;
+    font-size: 13px;
+}
+
+b2b_buyer_wishlists-header button{
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.content-actions button{
+    font-size: 13px;
+}
+
+.slds-tabs_default__nav .slds-tabs_default__item {
+    padding: 0;
+}
+
+.contentRegion .salesforceIdentityLoginForm2 a:hover{
+    color: #fff;
+    text-decoration: underline;
+}

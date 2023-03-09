@@ -1,0 +1,57 @@
+<aura:component access="global" 
+                controller="IBCreditLimitsCtrl"
+    			implements="forceCommunity:availableForAllPageTypes">
+    
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:attribute name="accountId" type="String" default="0013L00000CrjFeQAJ" access="public"/>
+	
+    <!-- Attribute Declaration -->
+    
+	<div>
+    	<h1 class="title">
+        	Current Actions
+        </h1>
+
+        <div>
+            <table>
+            	<tr>
+                	<th>Transaction</th>
+                	<th>Status</th>
+                	<th>Date</th>
+                	<th>Units</th>
+                </tr>
+                <tr>
+                	<td>DZ101</td>
+                	<td>Shipping</td>
+                	<td>13 Dec 2020</td>
+                	<td>5500</td>
+                </tr>
+                <tr>
+                	<td>ECONODRIVE</td>
+                	<td>Shipping</td>
+                	<td>14 Dec 2020</td>
+                	<td>270</td>
+                </tr>
+                <tr>
+                	<td>ENASAVE EC300+</td>
+                	<td>Pending Quote</td>
+                	<td>07 Dec 2020</td>
+                	<td>150</td>
+                </tr>
+                <tr>
+                	<td>D325+</td>
+                	<td>Quote Approv.</td>
+                	<td>06 Dec 2020</td>
+                	<td>6220</td>
+                </tr>
+                <tr>
+                	<td>SP SPORT MAXX GT</td>
+                	<td>Payment Pend.</td>
+                	<td>31 Nov 2020</td>
+                	<td>7900</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</aura:component>

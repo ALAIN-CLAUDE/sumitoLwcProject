@@ -1,0 +1,83 @@
+:host {
+    position: relative;
+}
+
+.csv-file-button-label,
+.pricebook-file-button-label {
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 38px;
+    position: relative;
+    cursor: pointer;
+    padding: 0 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.pricebook-file-button-label {
+    background: #fff;
+}
+
+.csv-file-button-label:hover {
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+.csv-file-button-label input[type="file"] {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.pricebook-file-button-label:hover {
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+.borders {
+    border-top: 1px solid #e3e4db;
+    border-bottom: 1px solid #e3e4db;
+}
+
+.manual div {
+    display: inline-block;
+    width: 50%;
+    color: #a6a6a6;
+}
+
+.font {
+    color: #003357;
+}
+
+.icon {
+    float: left;
+    position: relative;
+    margin-right: 10px;
+    top: 8px;
+}
+
+.promp-text {
+    max-width: 400px;
+}
+
+.upload-section{
+    display: flex;
+    border-bottom: 1px solid #e3e4db;
+}
+
+.slds-grid_vertical {
+    background: #f2f2f2;
+}
+
+.width-50 {
+    display: inline-block;
+    width: 50%;
+}
+
+/*.body {
+    width: 600px;
+    margin: auto;
+}*/

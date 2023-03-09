@@ -1,0 +1,108 @@
+<aura:component
+                implements="forceCommunity:themeLayout"
+                access="global"
+                description="B2B NT Layout"
+                >
+    <!--<ltng:require
+  styles="{!$Resource.xxx  + '/xxx.css'}"
+  scripts="{!$Resource.xxx + '/xxx.js'}"
+  afterScriptsLoaded="{!c.scriptsLoaded}" />-->
+    
+    <aura:handler name="init" value="{!this}" action="{!c.scriptsLoaded}" />
+    
+    <!-- uncomment if theme css to large <ltng:require styles="{!$Resource.b2bTheme}" /> -->
+    
+    <aura:handler
+                  name="init"
+                  value="{!this}"
+                  action="{!c.scriptsLoaded}"
+                  />
+    <aura:handler
+                  event="forceCommunity:routeChange"
+                  action="{!c.handleRouteChange}"
+                  />
+    
+    <aura:attribute
+                    name="themeHeader"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    <aura:attribute
+                    name="themeHero"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    
+    <aura:attribute
+                    name="search"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    <aura:attribute
+                    name="profileMenu"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    <aura:attribute
+                    name="navBar"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    <!--<aura:attribute name="profileMenu" type="Aura.Component[]" required="false" />-->
+    <aura:attribute
+                    name="customProfileMenu"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    
+    <aura:attribute
+                    name="miniCart"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    
+    <aura:attribute
+                    name="showHero"
+                    type="Boolean"
+                    required="false"
+                    />
+    
+    <aura:attribute
+                    name="showHeader"
+                    type="Boolean"
+                    required="false"
+                    />
+    
+    <aura:attribute
+                    name="showFooter"
+                    type="Boolean"
+                    required="false"
+                    />
+    
+    <aura:attribute
+                    name="themeFooter"
+                    type="Aura.Component[]"
+                    required="false"
+                    />
+    
+    <div>
+        <!--load ootb header to get style and script, but hide and use custom:-->
+        <aura:if isTrue="{!v.showHeader}">
+            <div aura:id="themeHeader">{!v.themeHeader}</div>
+        </aura:if>
+        <c:B2B_CreditLimit></c:B2B_CreditLimit>
+        <!-- <div class="minicart cartButton">{!v.miniCart}</div> -->
+        <aura:if isTrue="{!v.showHero}">
+            <div class="hero">{!v.themeHero}</div>
+        </aura:if>
+        <div
+             class="body"
+             aura:id="body"
+             >
+            {!v.body}
+        </div>
+        <aura:if isTrue="{!v.showFooter}">
+            <footer class="footer-container" aura:id="themeFooter">{!v.themeFooter}</footer>
+        </aura:if>
+    </div>
+</aura:component>

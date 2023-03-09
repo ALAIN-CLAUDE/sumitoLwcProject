@@ -1,0 +1,71 @@
+<aura:component controller="AccViewSAPAccountDetailsCtrl" implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- Attribute Declaration -->
+    <aura:attribute name="account" type="Account"/>
+    <aura:attribute name="selectOptionFields" type="List" default="['Block_Central_Billing__c', 'Block_Central_Delivery__c', 'Block_Central_Order__c', 'Customer_accgroup__c', 'Division__c', 'Enterprise_Development__c']" />
+    <aura:attribute name="accRcrdTypeName" type="String" default=""/>
+    <aura:attribute name="creditLastUpdateDate" type="String" default=""/>
+    <aura:attribute name="isReadOnly" type="Boolean" default="true"/>
+    <aura:attribute name="options_Block_Central_Billing__c" type="List" />
+    <aura:attribute name="options_Block_Central_Delivery__c" type="List" />
+    <aura:attribute name="options_Block_Central_Order__c" type="List" />
+    <aura:attribute name="options_Customer_accgroup__c" type="List" />
+    <aura:attribute name="options_Division__c" type="List" />
+    <aura:attribute name="options_Enterprise_Development__c" type="List" />
+
+	<div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+        <lightning:input class="field" name="name" value="{!v.account.SAP_Customer_Code__c}" disabled="true" label="SAP Customer Code" />
+        <lightning:input class="field" name="name" value="{!v.account.Customer_Group_Pricing__c}" disabled="true" label="Customer Group Pricing" />
+        <lightning:input class="field" name="name" value="{!v.account.Customer_Group_Pricing_Code__c}" disabled="true" label="Customer Group Pricing Code" />
+
+        <aura:if isTrue="{!v.accRcrdTypeName == 'Domestic'}">
+            <lightning:input class="field" type="number" formatter="currency" name="name" value="{!v.account.Marketing_Rands_Balance__c}" disabled="true" label="Marketing Rands Balance" step="0.01"/>
+            <lightning:input class="field" type="number" formatter="currency" name="name" value="{!v.account.Marketing_Rands_Expiring__c}" disabled="true" label="Marketing Rands Expiring" step="0.01"/>
+            
+            <lightning:select class="field" label="Enterprise Development" value="{!v.account.Enterprise_Development__c}" disabled="true">
+                <aura:iteration items="{!v.options_Enterprise_Development__c}" var="item">
+                    <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Enterprise_Development__c)}"/>
+                </aura:iteration>
+            </lightning:select>
+        </aura:if>
+
+        <lightning:input class="field" type="number" formatter="currency" name="name" value="{!v.account.Credit_Limit__c}" disabled="true" label="Credit Limit"  step="0.01"/>
+        <lightning:input class="field" type="number" formatter="currency" name="name" value="{!v.account.Credit_Limit_Available__c}" disabled="true" label="Credit Limit Available" step="0.01"/>
+        <lightning:input class="field" type="number" formatter="currency" name="name" value="{!v.account.Credit_Exposure__c}" disabled="true" label="Credit Exposure" step="0.01"/>
+        <lightning:input class="field" type="number" formatter="percent" name="name" value="{!v.account.Credit_Limit_used__c}" disabled="true" label="Credit Limit used %" step="0.0001"/>
+        <lightning:input class="field" name="name" value="{!v.creditLastUpdateDate}" disabled="true" label="Credit Last Update Date" />
+
+        <lightning:input class="field" name="name" value="{!v.account.VAT_Number__c}" disabled="true" label="VAT Number" />
+        <lightning:input class="field" name="name" value="{!v.account.Company_Registration__c}" disabled="true" label="Company Registration" />
+
+        <lightning:select class="field" label="Block: Central Order" value="{!v.account.Block_Central_Order__c}" disabled="true">
+            <aura:iteration items="{!v.options_Block_Central_Order__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Block_Central_Order__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+        <lightning:select class="field" label="Block: Central Billing" value="{!v.account.Block_Central_Billing__c}" disabled="true">
+            <aura:iteration items="{!v.options_Block_Central_Billing__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Block_Central_Billing__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+        <lightning:select class="field" label="Block: Central Delivery" value="{!v.account.Block_Central_Delivery__c}" disabled="true">
+            <aura:iteration items="{!v.options_Block_Central_Delivery__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Block_Central_Delivery__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+        <lightning:select class="field" label="Customer Account Group" value="{!v.account.Customer_accgroup__c}" disabled="true">
+            <aura:iteration items="{!v.options_Customer_accgroup__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Customer_accgroup__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+        <lightning:select class="field" label="Division" value="{!v.account.Division__c}" disabled="true">
+            <aura:iteration items="{!v.options_Division__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Division__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+
+        <lightning:input class="field" name="name" value="{!v.account.Account_Clerk__c}" disabled="true" label="Account Controller" />
+    </div>
+</aura:component>

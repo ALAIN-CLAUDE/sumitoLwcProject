@@ -1,0 +1,180 @@
+<!-- Csv Order -->
+<template>
+
+    <template if:true={successModal}>
+        <section
+                role="dialog"
+                tabindex="-1"
+                class="slds-modal slds-fade-in-open"
+        >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title={modalCloseLabel}
+                            onclick={closeModal}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small"
+                        >
+                        </lightning-icon>
+                        <span class="slds-assistive-text">{modalCloseLabel}</span>
+                    </button>
+                    <h2
+                            id="modal-heading-01"
+                            class="slds-text-heading_medium slds-hyphenate"
+                    >
+                        {successModalHeading}
+                    </h2>
+                </header>
+                <div
+                        class="slds-modal__content slds-p-around_medium"
+                        id="modal-content-id-1"
+                >
+                    <p if:true={CSVProcess}>{successModalUploadSuccessfulMessage}</p>
+                    <p if:false={CSVProcess}>{nonCSVModalUploadSuccessfulMessage}</p>
+                </div>
+                <footer class="slds-modal__footer slds-clearfix">
+                    <div class="slds-float_right">
+                        <button
+                                class="slds-button slds-button_neutral"
+                                onclick={closeModal}
+                                title={successModalCloseButtonText}
+                        >
+                            {successModalCloseButtonText}
+                        </button>
+                        <button
+                                if:true={cartId}
+                                class="slds-button slds-button_brand slds-m-left_small"
+                                onclick={goToCart}
+                                title={successModalGoToCartButton}
+                        >
+                            {successModalGoToCartButton}
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={errorModal}>
+        <section
+                role="dialog"
+                tabindex="-1"
+                class="slds-modal slds-fade-in-open"
+        >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title={modalCloseLabel}
+                            onclick={closeModal}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small"
+                        >
+                        </lightning-icon>
+                        <span class="slds-assistive-text">{modalCloseLabel}</span>
+                    </button>
+                    <h2
+                            id="modal-heading-02"
+                            class="slds-text-heading_medium slds-hyphenate"
+                    >
+                        {errorModalUploadFailedText}
+                    </h2>
+                </header>
+                <div
+                        class="slds-modal__content slds-p-around_medium"
+                        id="modal-content-id-2"
+                >
+                    <p>{errorMessage}</p>
+                </div>
+                <footer
+                        class="slds-modal__footer"
+                        if:true={fileAvailable}
+                >
+                    <lightning-button
+                            variant="brand"
+                            icon-name="utility:download"
+                            onclick={downloadErrorFile}
+                            class="slds-button slds-button_brand"
+                            label={errorModalResultsDownload}
+                            title={errorModalResultsDownload}
+                    >
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <div class="slds-grid slds-grid_vertical slds-m-around_medium slds-p-vertical_large slds-p-horizontal_medium borders font body">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium slds-m-left_medium">
+            {titleText}
+        </h3>
+
+        <section class="slds-align_left upload-section slds-p-around_medium">
+            <lightning-spinner
+                    if:true={showSpinner}
+                    class="slds-is-relative slds-m-around_large"
+                    alternative-text="Loading"
+                    size="medium"
+                    variant="brand"
+            >
+            </lightning-spinner>
+
+            <div class="width-50">
+                <label onclick={handleDownloadPricebook}
+                       class="pricebook-file-button-label slds-m-right_x-small"
+                >
+                    <lightning-icon
+                            icon-name="utility:download"
+                            size="small"
+                            class="icon"
+                    >
+                    </lightning-icon>
+                    {downloadButtonText}
+                </label>
+            </div>
+
+            <div class="width-50">
+                <label
+                        for="csv-file-button"
+                        class="csv-file-button-label slds-m-right_x-small slds-button slds-button_brand"
+                >
+                    <lightning-icon
+                            icon-name="utility:upload"
+                            size="small"
+                            class="icon"
+                    >
+                    </lightning-icon>
+                    {uploadButtonText}
+                    <input
+                            if:false={showSpinner}
+                            class="button"
+                            type="file"
+                            accept={acceptedFormats}
+                            data-id="csv-file"
+                            onchange={processCSV}
+                            id="csv-file-button"
+                    />
+                </label>
+            </div>
+        </section>
+
+        <section class="slds-align_left  slds-p-around_medium">
+            <div>{labels.csvOrderStep1}</div>
+            <div>{labels.csvOrderStep3}</div>
+           <!-- <div>{labels.csvOrderStep2}</div>-->
+            <div>{labels.csvOrderStep4}</div>
+        </section>
+    </div>
+
+</template>

@@ -1,0 +1,14 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+    
+    <aura:attribute name="isOpen" type="boolean" default="false" access="private"/>
+
+    <div class="car-selector-container">
+        <div class="car-selector">
+            <lightning:button label="CAR SELECTOR" class="search-car" onclick="{!c.carSearch}" />
+        </div>
+    </div>
+	<aura:if isTrue="{!v.isOpen}">
+        <c:IBCarSearchModal isOpen="{!v.isOpen}" isLoadingOpen="{!v.isLoadingOpen}" vehicles="{!v.vehicles}" products="{!v.products}"/>
+    </aura:if>
+
+</aura:component>

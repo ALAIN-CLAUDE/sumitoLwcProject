@@ -1,0 +1,84 @@
+<aura:component controller="IBContactUsDetailsCtrl" implements="forceCommunity:availableForAllPageTypes">
+    <div class="">
+        <h1>
+            Product Bulletin
+        </h1>
+    </div>
+	<div class="slds-grid" style="padding: 8px;">
+        <div class="slds-col bulletin">
+        	<div>
+                <h1>
+                	R550
+                </h1>
+            </div>
+        	<div>
+                <h2>
+                	PER UNIT
+                </h2>
+            </div>
+        	<div class="slds-grid product">
+                <div class="slds-col" style="width: 50%;">
+                    <img class="prodBrandImage" src="{!$Resource.CommunityAssets + '/Images/dunlopMiniLogo.png'}"/>
+                </div>
+                <div class="slds-col" style="width: 50%;">
+                    <img class="prodImage" src="{!$Resource.CommunityAssets + '/Images/dunlopTire.png'}"/>
+                </div>
+            </div>
+        	<div class="brand">
+                <h3>
+                	Dunlop
+                </h3>
+            </div>
+        </div>
+    	<div class="slds-col bulletin">
+        	<div>
+                <h1>
+                	R2750
+                </h1>
+            </div>
+        	<div>
+                <h2>
+                	PER 4 UNIT
+                </h2>
+            </div>
+        	<div class="slds-grid product">
+                <div class="slds-col" style="width: 50%;">
+                    <img class="prodBrandImage" src="{!$Resource.CommunityAssets + '/Images/falkenMiniLogo.png'}"/>
+                </div>
+                <div class="slds-col" style="width: 50%;">
+                    <img class="prodImage" src="{!$Resource.CommunityAssets + '/Images/FalconTire.png'}"/>
+                </div>
+            </div>
+        	<div class="brand">
+                <h3>
+                	Falken
+                </h3>
+            </div>
+        </div>
+    	<div class="slds-col bulletin">
+        	<div>
+                <h1>
+                	R900
+                </h1>
+            </div>
+        	<div>
+                <h2>
+                	PER UNIT
+                </h2>
+            </div>
+        	<div class="slds-grid product">
+                <div class="slds-col" style="width: 50%;">
+                    <img class="prodBrandImage" src="{!$Resource.CommunityAssets + '/Images/sumitomoMiniLogo.png'}"/>
+                </div>
+                <div class="slds-col" style="width: 50%;">
+                    <img class="prodImage" src="{!$Resource.CommunityAssets + '/Images/sumitomoTire.png'}"/>
+                </div>
+            </div>
+        	<div class="brand">
+                <h3>
+                	Sumitomo
+                </h3>
+            </div>
+        </div>
+    </div>
+</aura:component>

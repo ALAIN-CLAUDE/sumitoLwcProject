@@ -1,0 +1,64 @@
+.boxes{
+    margin: auto;
+    max-width: 960px;
+}
+
+.marketing-container{
+    height: 400px;
+    background-color: #003459;
+}
+
+.box{
+    margin: 75px 64px;
+    background-color: #fff;
+    height: 170px;
+    width: 350px;
+    padding: 20px 10px;
+}
+
+.header{
+    width: 1150px;
+    display: inline-block;
+    align-self: flex-end;
+    color: #003459;
+    font-size: 20px;
+    font-weight: 700;
+    margin: auto;
+}
+
+.header-container{
+    display: flex;
+    background-color: #fff;
+    height: 66px;
+}
+
+.title{
+    font-size: 16px;
+    color: #003357;
+    font-weight: 600;
+}
+
+.value-earned{
+    font-size: 50px;
+    color: #003459;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.value-expiring{
+    font-size: 50px;
+    color: #feca0a;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.date{
+    color: #a6a6a6;
+    font-size: 13px;
+}
+
+.icon{
+    margin-right: 20px;
+}

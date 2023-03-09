@@ -1,0 +1,96 @@
+<!--
+* @author  Ephetehe Mokgopanyane(ephetehe.mokgopanyane@tetrad.co.za)
+* @version v1.0
+* @since   2021-07-19
+-->
+<aura:component access="global" 
+                controller="IBCreditLimitsCtrl"
+    			implements="forceCommunity:availableForAllPageTypes">
+
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	
+    <!-- Attribute Declaration -->
+    <aura:attribute name="accountId" type="String" default="0013L00000CrjFeQAJ" access="public"/>
+    <aura:attribute name="account" type="Account" access="private"/>
+    <aura:attribute name="creditLimitAvailablePrc" type="String" access="private"/>
+    
+    <div>
+    	<h1 class="title">
+        	Credit Limit Information
+        </h1>
+        <div>
+        	<h2>
+            	{!v.account.Currency_to_adopt__c + ' ' + v.account.Credit_Limit__c}
+            </h2>
+            <h3>
+            	Credit Limit
+            </h3>
+        </div>
+        <div>
+        	<h2>
+            	{!v.account.Currency_to_adopt__c + ' ' + v.account.Credit_Exposure__c}
+            </h2>
+            <h3>
+            	Credit Exposure
+            </h3>
+        </div>
+        <div>
+        	<h2>
+            	{!v.account.Currency_to_adopt__c + ' ' +v.account.Credit_Limit_Available__c}
+            </h2>
+            <h3>
+            	Credit Available
+            </h3>
+        </div>
+        <div>
+            <h4>
+            	Last Updated: <lightning:formattedDateTime value="{!v.account.Credit_Last_Updated_Date__c}"/>
+            </h4>
+        </div>
+        <div class="slds-grid prgsBarCntnr">
+            <div class="slds-col leftPrgs">
+                <div>
+                    <div class="slds-progress-bar slds-progress-bar_large slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="background: #F1F1F1;">
+                        <span class="slds-progress-bar__value" style="{!'width:' + v.account.Credit_Limit_used__c + '%; background:#197BBD;'}">
+                            <span class="slds-assistive-text">{!'Progress: ' + v.account.Credit_Limit_used__c + '%'}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col prgsTitle">
+                        <h5>
+                        	Credit Limit Used
+                        </h5>
+                    </div>
+                    <div class="slds-col prgsValue">
+                        <h6>
+                            {!v.account.Credit_Limit_used__c +'%'}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col rightPrgs">
+                <div>
+                    <div class="slds-progress-bar slds-progress-bar_large slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="background: #F1F1F1;">
+                        <span class="slds-progress-bar__value" style="{!'width:' + v.creditLimitAvailablePrc + '%; background:#FFC145;'}">
+                            <span class="slds-assistive-text">{!'Progress: ' + v.creditLimitAvailablePrc + '%'}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col prgsTitle">
+                        <h5>
+                            Credit Available
+                        </h5>
+                    </div>
+                    <div class="slds-col prgsValue">
+                        <h6>
+                            {!v.creditLimitAvailablePrc +'%'}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,30 @@
+<template>
+    <template if:false={isEmpty}>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <template if:true={showBackButton}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <a href="javascript:return false;" onclick={toParentPage} data-parentid={parentId}>Back</a>
+                    </div>
+                </div>
+            </template>    
+            <template for:each={rowItems} for:item="row">
+                <div key={row} class="slds-grid slds-gutters">
+                    <template for:each={row} for:item="mmi">
+                        <div key={mmi.id} class="slds-col slds-size_1-of-2">
+                            <c-marketing-materials-item onnavigate={handleNavigate} item={mmi} cover={mmi.cover}></c-marketing-materials-item>
+                        </div>
+                    </template> 
+                </div>
+                <br key={row}/><br key={row}/>
+            </template>
+        </div>
+    </template>
+    <template if:true={isEmpty}>
+        <div style="text-align:center; font-size:36px; color:red; width:100%; margin-top:1%;">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                There is no marketing material.
+            </h2>
+        </div>
+    </template>
+</template>

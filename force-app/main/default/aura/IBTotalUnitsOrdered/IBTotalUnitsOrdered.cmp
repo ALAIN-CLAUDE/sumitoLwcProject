@@ -1,0 +1,97 @@
+<aura:component access="global" 
+                controller="IBCreditLimitsCtrl"
+    			implements="forceCommunity:availableForAllPageTypes">
+    
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	
+    <!-- Attribute Declaration -->
+    <aura:attribute name="year" type="String" default="2021" access="private"/>
+    <aura:attribute name="month1" type="String" default="2021" access="private"/>
+    <aura:attribute name="month2" type="String" default="2021" access="private"/>
+    <aura:attribute name="month3" type="String" default="2021" access="private"/>
+    <aura:attribute name="month1Value" type="String" default="2021" access="private"/>
+    <aura:attribute name="month2Value" type="String" default="2021" access="private"/>
+    <aura:attribute name="month3Value" type="String" default="2021" access="private"/>
+    
+	<div>
+    	<h1 class="title">
+        	Total Units Ordered ({!v.year} to Date)
+        </h1>
+
+        <div class="prgsBarCntnr">
+            <div class="slds-grid mnthCntnr">
+                <div class="slds-col prgsBarLeft">
+                    <lightning:icon iconName="standard:webcart" alternativeText="Cart Icon" title="Cart" class="month1Icon"/>
+                </div>
+                <div class="slds-col prgsBarMid">
+                    <div class="slds-grid">
+                        <div class="slds-progress-bar slds-progress-bar_large slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="background: #F1F1F1;">
+                            <span class="slds-progress-bar__value" style="{!'width:52%; background:linear-gradient(270deg, #FCAE73 0%, #F79042 99.18%);'}">
+                                <span class="slds-assistive-text">{!'Progress: 52%'}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <h2>
+                            July
+                        </h2>
+                    </div>
+                </div>
+                <div class="slds-col prgsBarRight">
+                    <h3>
+                        52K
+                    </h3>
+                </div>
+            </div>
+            <div class="slds-grid mnthCntnr">
+                <div class="slds-col prgsBarLeft">
+                    <lightning:icon iconName="standard:webcart" alternativeText="Cart Icon" title="Cart" class="month2Icon"/>
+                </div>
+                <div class="slds-col prgsBarMid">
+                    <div class="slds-grid">
+                        <div class="slds-progress-bar slds-progress-bar_large slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="background: #F1F1F1;">
+                            <span class="slds-progress-bar__value" style="{!'width:21%; background:linear-gradient(90deg, #209D43 0%, #2BC255 100%);'}">
+                                <span class="slds-assistive-text">{!'Progress: 21%'}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <h2>
+                            August
+                        </h2>
+                    </div>
+                </div>
+                <div class="slds-col prgsBarRight">
+                    <h3>
+                        21K
+                    </h3>
+                </div>
+            </div>
+            <div class="slds-grid mnthCntnr">
+                <div class="slds-col prgsBarLeft">
+                    <lightning:icon iconName="standard:webcart" alternativeText="Cart Icon" title="Cart" class="month3Icon"/>
+                </div>
+                <div class="slds-col prgsBarMid">
+                    <div class="slds-grid">
+                        <div class="slds-progress-bar slds-progress-bar_large slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="background: #F1F1F1;">
+                            <span class="slds-progress-bar__value" style="{!'width:74%; background:#70A6E8;'}">
+                                <span class="slds-assistive-text">{!'Progress: 74%'}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <h2>
+                            September
+                        </h2>
+                    </div>
+                </div>
+                <div class="slds-col prgsBarRight">
+                    <h3>
+                        74K
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

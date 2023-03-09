@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>Csv Order</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Csv Order</masterLabel>
+
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="effectiveAccountId" type="String" label="Effective Account Id" description="The ID of the account under which the user is acting." default="{!CurrentUser.effectiveAccountId}"/>
+            <property name="titleText" type="String" label="Title text" default="Quick Order"/>
+            <property name="promptText" type="String" label="Mid text" default="Choose a CSV file from your machine that contains columns for SKU
+            and Quantity. You can use our template." description="Text in the middle of component that describes its functionality"/>
+            <property name="modalCloseLabel" type="String" label="Close label in  modal" description="This field name is going to be used when any modal is shown." default="Close"/>
+            <property name="successModalHeading" type="String" label="Success Modal Heading" description="This field name is going to be used when modal is shown." default="Upload successful"/>
+            <property name="successModalUploadSuccessfulMessage" type="String" label="CSV Upload Successful Message" default="Your CSV file has been uploaded successfully. All products were  added to your cart."/>
+            <property name="nonCSVModalUploadSuccessfulMessage" type="String" label="Quick Add To Cart Success Message" default="All selected products were  added to your cart."/>
+            <property name="successModalCloseButtonText" type="String" label="Success Modal Close Modal Button Text" default="Continue shopping"/>
+            <property name="successModalGoToCartButton" type="String" label="Success Modal Close Modal Go To Cart Button Text" default=" Go to cart"/>
+            <property name="errorModalUploadFailedText" type="String" label="Error Modal Upload Failed Text" default="Upload failed"/>
+            <property name="errorsInCSVException" type="String" label="No File Selected Toast Title" default="Your CSV file contains elements that cannot be added to cart.
+            Please correct your file and upload it again. You can see which lines cause an error in the results CSV document. You can delete or correct those lines
+            directly in that document and use it for uploading again."/>
+            <property name="uploadButtonText" type="String" label="Label of the upload button" default="Upload Cart Items"/>
+            <property name="downloadButtonText" type="String" label="Label of the download button" default="Email me Price Book"/>
+            <property name="errorModalResultsDownload" type="String" label="Error Modal Results Download" default="Download CSV results file"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,77 @@
+:host {
+    font-size: 14px;
+}
+
+.backgroundInverse {
+    position: relative;
+    background-color: #16325c;
+    height: 80px;
+}
+
+.pageTitle {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.actionIcon {
+    cursor: pointer;
+    float:right
+}
+
+.userTable {
+    /*box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);*/
+    padding: 4px;
+    border-radius: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.noUsersHeader {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.editUserIcon {
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+}
+
+.leftColumns {
+    padding-left: 12px
+}
+
+.bottomRow {
+    padding-bottom: 8px;
+}
+
+.userTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.userTable td, .userTable th {
+    padding: 8px;
+}
+
+.userTable th {
+    border: 1px solid #ddd;
+}
+
+.userTable tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.userTable tr:hover {
+    background-color: #ddd;
+}
+
+.userTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}

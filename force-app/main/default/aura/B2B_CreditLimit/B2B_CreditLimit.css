@@ -1,0 +1,42 @@
+.THIS .limits {
+    text-align: right;
+    max-width: 1220px;
+    margin: auto;
+    font-size: 14px;
+    padding: 5px;
+    height: 30px;
+}
+
+.THIS .credit-available .value {
+    color: #4db2f5;
+}
+
+.THIS .value{
+    margin: 0 20px 0 5px;
+    font-weight: bold;
+}
+
+.THIS .last-update{
+    color: #a6a6a6;
+}
+
+.THIS .warning-image{
+    height: 20px;
+    width: 20px;
+    float: left;
+}
+
+.THIS .warning-message{
+    float: left;
+    margin-left: 4px;
+    font-size: 13px;
+    color: red;
+}
+
+.THIS .credit-image{
+    padding: 0 10px 2px 0;
+}
+
+.THIS {
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
+}

@@ -1,0 +1,85 @@
+<aura:component controller="AccountViewNewAccCtrl" implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference">
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	
+    <!-- Attribute Declaration -->
+    <aura:attribute name="showSpinner" type="boolean" default="false" access="private"/>
+    <aura:attribute name="selectOptionFields" type="List" default="['Delivery_Priority__c', 'Group_4__c', 'Group_5__c', 'Price_Group__c', 'Payment_Terms__c', 'Delivering_Plant__c', 'Distribution_Channel__c', 'Currency_to_adopt__c', 'Route__c', 'Ownership', 'Industry', 'Forwarding_Agent_Name__c', 'Delivery_terms__c', 'Inco2__c']" />
+	<aura:attribute name="account" type="Account" default="{'Compressor__c':false,'Counter_and_Reception_Area__c':false, 'Credit_Limit_Available__c':0,'Credit_Limit_Requested__c':0,'Currency_to_adopt__c':'ZAR','Delivery_Priority__c':'','Distribution_Channel__c':'DM','Dunlop_Commitment__c':0,'Electric_Balancing_Machine__c':false,'FittingArea__c':false,'Fitting_Machine__c':false,'Group_4__c':'','Group_5__c':'','Lower_Level_Lifts__c':false,'Name':'','Payment_terms__c':'','Price_group__c':'','RecordTypeId':'','Restrooms__c':false, 'Route__c': '','Stage__c':'Draft','Trading_As_Name__c':'','Turnover_Potential__c':0}"/>
+    <aura:attribute name="accRcrdTypeName" type="String" default=""/>
+
+    <aura:attribute name="options_Currency_to_adopt__c" type="List" />
+    <aura:attribute name="options_Delivering_Plant__c" type="List" />
+    <aura:attribute name="options_Delivery_Priority__c" type="List" />
+    <aura:attribute name="options_Delivery_terms__c" type="List" />
+    <aura:attribute name="options_Distribution_Channel__c" type="List" />
+    <aura:attribute name="options_Forwarding_Agent_Name__c" type="List" />
+    <aura:attribute name="options_Group_4__c" type="List" />
+    <aura:attribute name="options_Group_5__c" type="List" />
+    <aura:attribute name="options_Inco2__c" type="List" />
+    <aura:attribute name="options_Industry" type="List" />
+    <aura:attribute name="options_Ownership" type="List" />
+    <aura:attribute name="options_Payment_Terms__c" type="List" />
+    <aura:attribute name="options_Price_Group__c" type="List" />
+    <aura:attribute name="options_Route__c" type="List" />
+
+    <aura:attribute name="options_Currency_to_adopt__cDom" type="List" default="['ZAR']"/>
+    <aura:attribute name="options_Delivering_Plant__cDom" type="List" default="['Durban Head Office', 'Durban Plant', 'Ladysmith Plant', 'Domestic Products', 'CapeTown', 'Durban', 'East London', 'Jet Park', 'Port Elizabeth', 'Warehouse V - Export', 'Warehouse V - Mrchantg']"/>
+    <aura:attribute name="options_Delivery_Priority__cDom" type="List" default="['High', 'Same Day Delivery', '1 Day Delivery', '2 Day Delivery', '3 Day Delivery', '4 Day Delivery']"/>
+    <aura:attribute name="options_Distribution_Channel__cDom" type="List" default="['Domestic']"/>
+	<aura:attribute name="options_Group_4__cDom" type="List" default="['Bad Debts Acc', 'Best Drive', 'Carriage Claim Acc', 'Conti Commercial', 'Dunlop Commercial', 'Dunlop Express', 'Dunlop Zone', 'Enterprise Dev', 'Fit &amp; Go', 'Government', 'Head Office Acc', 'Hi Q', 'Imperial Cargo Group', 'Inactive Replacement', 'Kwikfit', 'Motorcycle', 'OE Car and Truck', 'Other', 'OTR Direct', 'Parts &amp; Accessories', 'PCR Trailer Mnf', 'Point  S', 'Riaan', 'Speedy', 'SRSA Direct', 'Sundry', 'Supa Quick', 'TBR Fleets', 'TBR Trailer Mnf', 'TEC', 'Tiger Wheel and Tyre', 'Trentyre', 'Tyre House', 'Tyremart Grouped', 'Tyres 2000']"/>
+    <aura:attribute name="options_Group_5__cDom" type="List" default="['Direct OTR', 'Dunlop Direct', 'Export Other', 'Fleets', 'Goverment', 'Independents', 'OE', 'OE2', 'Off Take -Bought out', 'Sundry', 'TEC', 'Tier 1', 'Trailer manufacturer', 'Tyre mnf owned']"/>
+    <aura:attribute name="options_Payment_Terms__cDom" type="List" default="['7 days', '30 Days', '37 Days', '45 Days', '47 Days Domestic', '60 Days', '67 Days Domestic', '7 days credit', '90 Days', 'Immediate Payment']"/>
+    <aura:attribute name="options_Price_Group__cDom" type="List" default="['C Dark Red', 'C1 Red', 'C2 Yellow', 'C3 Green', 'C4 Blue', 'CP', 'S1', 'XX', 'NO']"/>
+
+    <aura:attribute name="options_Currency_to_adopt__cIB" type="List" default="['USD', 'EURO', 'ZAR', 'AED', 'GBP']"/>
+	<aura:attribute name="options_Delivering_Plant__cIB" type="List" default="['Durban Head Office', 'Durban Plant', 'Ladysmith Plant', 'CapeTown', 'Durban', 'East London', 'Port Elizabeth', 'Warehouse V - Export']"/>
+    <aura:attribute name="options_Delivery_Priority__cIB" type="List" default="['High', 'Same Day Delivery', '1 Day Delivery', '2 Day Delivery', '3 Day Delivery', '4 Day Delivery']"/>
+    <aura:attribute name="options_Distribution_Channel__cIB" type="List" default="['Export', 'Fleet Business', 'Miscellaneous']"/>
+    <aura:attribute name="options_Delivery_terms__cIB" type="List" default="['FOB','CIF','CIP','CFR','FCA']"/>
+    <aura:attribute name="options_Forwarding_Agent_Name__cIB" type="List" default="['Value Logistics (Pty) Ltd','Sabot SA (Pty) Ltd','SG AGILITY Pty Ltd- EXPORT SUM']"/>
+    <aura:attribute name="options_Group_4__cIB" type="List" default="['frica Central', 'Africa East', 'Africa North', 'Africa South', 'Africa West', 'Brazil', 'EUR/UK', 'Islands', 'Rest of Latam', 'Riaan', 'Yukio']"/>
+    <aura:attribute name="options_Group_5__cIB" type="List" default="['Africa', 'Direct OTR', 'Dunlop Direct', 'Export Other', 'Fleets', 'Goverment', 'Independents', 'Latin America', 'OE', 'OE2', 'Off Take -Bought out', 'Sundry', 'TEC', 'Tier 1', 'Tier 2', 'Tier 3', 'Trailer manufacturer', 'Tyre mnf owned']"/>
+    <aura:attribute name="options_Inco2__cIB" type="List" default="['Dubai', 'ANTWERPEN', 'BULAWAYO', 'DURBAN', 'GERMANY', 'INDIA', 'JAPAN', 'THAILAND', 'TOKYO', 'USA Port']"/>
+    <aura:attribute name="options_Payment_Terms__cIB" type="List" default="['7 days', '30 Days', '37 Days', '45 Days', '47 Days Domestic', '60 Days', '67 Days Domestic', '7 days credit', '90 Days', 'Immediate Payment']"/>
+    <aura:attribute name="options_Price_Group__cIB" type="List" default="['C Dark Red', 'C1 Red', 'C2 Yellow', 'C3 Green', 'C4 Blue', 'CP', 'S1', 'XX', 'NO']"/>
+    
+    <aura:attribute name="options_Route__cFlt" type="List" default="['Long Haul','Long/Reg','Regional','Short Haul']"/>
+
+    <aura:attribute name="options_Currency_to_adopt__cGrp" type="List" default="['USD', 'EURO', 'ZAR', 'AED', 'GBP']"/>
+    <aura:attribute name="options_IndustryGrp" type="List" default="['Agriculture', 'Apparel', 'Banking', 'Biotechnology', 'Chemicals', 'Communications', 'Construction', 'Consulting', 'Education', 'Electronics', 'Energy', 'Engineering', 'Entertainment', 'Environmental', 'Finance', 'Food &amp; Beverage', 'Government', 'Healthcare', 'Hospitality', 'Insurance', 'Machinery', 'Manufacturing', 'Media', 'Not For Profit', 'Other', 'Recreation', 'Retail', 'Shipping', 'Technology', 'Telecommunications', 'Transportation', 'Utilities']"/>
+    <aura:attribute name="options_OwnershipGrp" type="List" default="['Public','Private','Subsidiary','Other']"/>
+
+    <div aura:id="editDialog" role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container" style="max-width: 1000px;">
+            <aura:if isTrue="{!v.showSpinner}">
+                <lightning:spinner aura:id="spinner" variant="brand" size="large" alternativeText="Loading...." />
+            </aura:if>
+            <div class="slds-modal__header">
+                <h2 class="slds-text-heading--medium">New Record</h2>
+            </div>
+            <div class="slds-modal__content slds-form_horizontal slds-form slds-p-around--medium slds-grid slds-wrap ">
+                <aura:if isTrue="{!v.accRcrdTypeName == 'International Business'}">
+                    <c:AccountViewNewAccIB account="{!v.account}" options_Currency_to_adopt__c="{!v.options_Currency_to_adopt__c}" options_Delivering_Plant__c="{!v.options_Delivering_Plant__c}" options_Delivery_Priority__c="{!v.options_Delivery_Priority__c}" options_Distribution_Channel__c="{!v.options_Distribution_Channel__c}" options_Group_4__c="{!v.options_Group_4__c}" options_Group_5__c="{!v.options_Group_5__c}" options_Payment_Terms__c="{!v.options_Payment_Terms__c}" options_Price_Group__c="{!v.options_Price_Group__c}" options_Inco2__c="{!v.options_Inco2__c}" options_Delivery_terms__c="{!v.options_Delivery_terms__c}" options_Forwarding_Agent_Name__c="{!v.options_Forwarding_Agent_Name__c}" />
+                </aura:if>
+
+                <aura:if isTrue="{!v.accRcrdTypeName == 'Domestic'}" >
+                    <c:AccountViewNewAccDom account="{!v.account}" options_Currency_to_adopt__c="{!v.options_Currency_to_adopt__c}" options_Delivering_Plant__c="{!v.options_Delivering_Plant__c}" options_Delivery_Priority__c="{!v.options_Delivery_Priority__c}" options_Distribution_Channel__c="{!v.options_Distribution_Channel__c}" options_Group_4__c="{!v.options_Group_4__c}" options_Group_5__c="{!v.options_Group_5__c}" options_Payment_Terms__c="{!v.options_Payment_Terms__c}" options_Price_Group__c="{!v.options_Price_Group__c}" />
+                </aura:if>
+
+                <aura:if isTrue="{!v.accRcrdTypeName == 'Fleet'}">
+                    <c:AccountViewNewAccFleet account="{!v.account}" options_Route__c="{!v.options_Route__c}"/>
+                </aura:if>
+
+                <aura:if isTrue="{!v.accRcrdTypeName == 'Group'}">
+                    <c:AccViewNewAccGroup account="{!v.account}" options_Currency_to_adopt__c="{!v.options_Currency_to_adopt__c}" options_Ownership="{!v.options_Ownership}" options_Industry="{!v.options_Industry}"/>
+                </aura:if>
+            </div>
+            <div class="slds-modal__footer">                
+                <lightning:button variant="neutral" label="Cancel" onclick="{!c.cancelDialog}"/>
+                <lightning:button variant="brand" label="Submit" onclick="{!c.saveRecord}" />
+            </div>
+        </div>
+    </div>
+    <div aura:id="overlay" class="slds-backdrop slds-backdrop--open"></div>
+</aura:component>

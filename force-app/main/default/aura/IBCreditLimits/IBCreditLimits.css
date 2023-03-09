@@ -1,0 +1,88 @@
+.THIS {
+    font-family: Open Sans;
+    background-color:rgba(254, 229, 2, 0.9);
+    background: linear-gradient(121.32deg, #FFFFFF 10.96%, #FFFFFF 72%, #FFFFFF 99.98%);
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+    padding: 24px 40px;
+}
+
+.THIS .title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    color: #696969;
+}
+
+.THIS h2 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #197BBD;
+    padding-top: 24px;
+}
+
+.THIS h3 {
+    font-size: 18px;
+    color: #AEAEAE;
+    line-height: 25px;
+}
+
+.THIS h4 {
+    font-size: 14px;
+    line-height: 19px;
+    color: #AEAEAE;
+    padding-top: 8px;
+}
+
+.THIS h5 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #AEAEAE;
+    padding-top: 8px;
+    text-align: left;
+}
+
+.THIS h6 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #404040;
+    padding-top: 8px;
+    text-align: right;
+}
+
+.THIS .prgsBarCntnr {
+    padding-top:8px;
+}
+
+.THIS .prgsBar {
+    margin-top:8px;
+    height: 24px;
+    width: 100%;
+    background: #197BBD;
+}
+
+.THIS .leftPrgs {
+    border-radius: 30px;
+    width: 50%;
+}
+
+.THIS .rightPrgs {
+    width: 50%;
+    padding-left: 24px;
+}
+
+.THIS .prgsTitle{
+    width: 50%;
+}
+
+.THIS .prgsValue{
+    width: 50%;
+}
+
+.THIS .progressBarCustom{
+    background: #197BBD;
+}

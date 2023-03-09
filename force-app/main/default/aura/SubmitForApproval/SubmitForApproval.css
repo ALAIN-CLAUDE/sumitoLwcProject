@@ -1,0 +1,12 @@
+.THIS {
+    height: 100%;
+}
+
+.THIS .button{
+    float: right;
+    margin-right: -14px !important;
+}
+
+.THIS .slds-textarea {
+    height:150px !important;
+}

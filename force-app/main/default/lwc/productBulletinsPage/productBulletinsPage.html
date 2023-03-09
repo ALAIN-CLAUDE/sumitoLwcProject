@@ -1,0 +1,14 @@
+<template>
+    <h2 class="slds-text-heading_large">All Product Bulletins</h2>
+    <div class="container">
+        <div class="inner-container">
+            <template for:each={bulletins} for:item="image">
+                <img
+                    key={image.id}
+                    src = {image.url}
+                    alt = {image.title}>
+            </template>
+        </div>
+        
+    </div>
+</template>

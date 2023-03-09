@@ -1,0 +1,10 @@
+<apex:page >
+    <style>
+    
+    </style>
+
+    <h1>Customer: </h1>
+    <apex:pageBlock >
+        You are viewing the  account.
+    </apex:pageBlock>
+</apex:page>

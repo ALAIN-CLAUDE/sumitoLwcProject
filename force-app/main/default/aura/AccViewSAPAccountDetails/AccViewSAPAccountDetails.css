@@ -1,0 +1,12 @@
+.THIS {
+    background: linear-gradient(121.32deg, #FFFFFF 10.96%, #FFFFFF 72%, #FFFFFF 99.98%);
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.THIS .field {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+}

@@ -1,0 +1,60 @@
+<template>
+    <div class="pdp-info-container">
+
+    <div class="stock-availability">
+        In Stock:
+        <img class="icon icon-local" src={icon_local}>
+        <span class="local stock-value">
+            {localStocks}
+        </span>
+        <img class="icon icon-national" src={icon_national}>
+        <span class="national stock-value">
+            {nationalStocks}
+        </span>
+        <img class="icon icon-stock-delivery" src={icon_stock_delivery} if:true={isStockAvailable}>
+        <span class="national stock-value" if:true={isStockAvailable}>
+            {stockDeliveryDate}
+        </span>
+    </div>
+    
+
+    <div class="quantity-selector">
+        <div class="slds-form-element">
+
+            <div class="slds-form-element__control">
+                <button class="slds-button slds-button_icon slds-button_icon-small button_decrement" onclick={handleDecrement}>
+                    -
+                </button>
+
+                <input type="number" id="counter" class="slds-input slds-input_counter" onchange={handleChangeQuantityValue} value={quantityValue}/>
+
+                <button class="slds-button slds-button_icon slds-button_icon-small button_increment" title="Increment counter" onclick={handleIncrement}>
+                +
+                </button>
+
+                <button class="slds-button slds-button_icon slds-button_icon-small button_increment-more" title="Increment +2 counter" onclick={handleIncrement2}>
+                    +2
+                </button>
+
+                <button class="slds-button slds-button_icon slds-button_icon-small button_increment-more" title="Increment +4 counter" onclick={handleIncrement4}>
+                    +4
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="action-area">
+        <button
+            class="slds-button slds-button_brand slds-button_stretch"
+            enabled={actionDisabled}
+            onclick={handleAction}
+        >
+            Add to Cart
+        </button>
+       
+    </section>
+    
+
+</div>
+
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <h1>Order History Tracking</h1><br/>
+    <template if:false={isEmpty}>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Edit Time</th>
+                    <th>Field</th>
+                    <th>Old Value</th>
+                    <th>New Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={historyData} for:item="his">
+                    <tr key={his.Id}>
+                        <td>{his.CreatedByName}</td>
+                        <td>{his.CreatedDate}</td>
+                        <td>{his.Field}</td>
+                        <td>{his.OldValue}</td>
+                        <td>{his.NewValue}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={isEmpty}>
+        <p>There is no history for this order.</p>
+    </template>
+</template>

@@ -1,0 +1,17 @@
+h2 {
+    color: white;
+}
+
+.slds-box {
+    border: 0 !important;
+}
+
+.carousel-image {
+    padding: 0 10vw;
+}
+
+.carousel-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}

@@ -1,0 +1,56 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-accordion active-section-name="A" allow-multiple-sections-open>
+        <lightning-accordion-section name="A" label={orderShippingAddress}>
+            <!--<div class="sub-title">{orderType}</div>-->
+            <hr/>
+            <template for:each={output} for:item="o">
+                <div key={o.OrderItemId} class="slds-grid product-detail-grid">
+                    <div class="slds-col slds-size_1-of-8">
+                        <a href={o.ProductUrl} target="_self">
+                            <img class="product-image" src={o.Product_Image_Link__c_Site} alt="Product Image">
+                        </a>
+                    </div>
+                    <div class="slds-col slds-size_5-of-8">
+                        <a href={o.ProductUrl} target="_self">
+                            <h3 class="product-title">{o.Name}</h3>
+                        </a>
+                        <p>Product Code: {o.ProductCode}</p>
+                        <p><c-order-item-details orderitemid={o.OrderItemId}></c-order-item-details></p>
+                        <p>Quantity: {o.Quantity}</p>
+                        <p>Total Excl. Tax:
+                            <lightning-formatted-number
+                            class="slds-p-left_xx-small listing-price"
+                            value={o.TotalLineAmount}
+                            currency-code=ZAR
+                            format-style="currency"
+                        >
+                        </lightning-formatted-number>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-size_2-of-8">&nbsp;</div>
+                </div>
+                <div key={o.OrderItemId} class="slds-grid slds-grid_vertical">
+                    <div class="slds-col acc-vertical">
+                        <lightning-accordion active-section-name="" allow-multiple-sections-open>
+                            <lightning-accordion-section name="tracking" label="Order Tracking by Qty">
+                                <p>Picked: {o.Picked_Quantity__c}</p>
+                                <p>Shipped: {o.Shipped_Quantity__c}</p>
+                                <p>Billed: {o.Billed_Quantity__c}</p>
+                                <p>Back Order: {o.Back_Ordered_Quantity__c}</p>
+                            </lightning-accordion-section>
+                        </lightning-accordion>
+                    </div>
+                    <div class="slds-col acc-vertical">
+                        <lightning-accordion active-section-name="" allow-multiple-sections-open>
+                            <lightning-accordion-section name="history" label="History">
+                                <c-order-item-history-tracking orderitemid={o.OrderItemId}></c-order-item-history-tracking>
+                            </lightning-accordion-section>
+                        </lightning-accordion>
+                    </div>
+                </div>
+                <hr key={o.OrderItemId}/>
+            </template>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>

@@ -1,0 +1,50 @@
+<aura:component controller="B2B_CreditLimitController" access="global" implements="forceCommunity:availableForAllPageTypes">
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.getInfo}" />
+    
+	
+    <!-- Attribute Declaration -->
+    <aura:attribute name="account" type="Account"/>
+    <aura:attribute name="blockMessage" type="String" default="Your Account is on Hold, Please contact your Sales Representative." access="public"/>
+    <aura:attribute name="isAccountBlocked" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="isLoaded" type="Boolean" default="false" access="private"/>
+
+    <aura:if isTrue="{!v.isLoaded}">
+        <div class="credit-limit-container">
+            <div class="limits">
+                
+                <aura:if isTrue="{!v.isAccountBlocked}">
+                    <img class='warning-image' src="{!$Resource.CommunityAssets + '/Images/WarningIcon.svg'}"/>
+
+                    <span class="warning-message">{!v.blockMessage}</span>
+                </aura:if>
+
+                <img class='credit-image' src="{!$Resource.CommunityAssets + '/Images/CreditIcon.svg'}"/>
+                <span class="credit-limit">Credit limit:</span>
+                <span class="value">
+                    {!v.account.Currency_to_adopt__c + ' '}
+                    <lightning:formattedNumber value="{!v.account.Credit_Limit__c}" style="decimal" maximumFractionDigits="0"/>
+                </span>
+
+                <span class="credit-exposure">
+                    Credit Exposure
+                </span>
+                
+                <span class="value">
+                    {!v.account.Currency_to_adopt__c + ' '}
+                    <lightning:formattedNumber value="{!v.account.Credit_Exposure__c}" style="decimal" maximumFractionDigits="0"/>
+                </span>
+
+                <span class="credit-available">Credit Available 
+                    <span class='last-update'> 
+                        (<lightning:formattedDateTime value="{!v.account.Credit_Last_Updated_Date__c}"/>)
+                    </span>
+
+                    <span class="value"> {!v.account.Currency_to_adopt__c + ' '}
+                        <lightning:formattedNumber value="{!v.account.Credit_Limit_Available__c}" style="decimal" maximumFractionDigits="0"/>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

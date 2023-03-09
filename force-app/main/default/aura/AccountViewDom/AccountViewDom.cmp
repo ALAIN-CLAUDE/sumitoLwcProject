@@ -1,0 +1,202 @@
+<aura:component controller="AccountViewDomCtrl" implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- Attribute Declaration -->
+    <aura:attribute name="selectOptionFields" type="List" default="['Currency_to_adopt__c', 'Customer_Group__c', 'Delivering_Plant__c', 'Delivery_Priority__c', 'Distribution_Channel__c', 'Group_4__c', 'Group_5__c', 'Group_Name__c', 'Payment_terms__c', 'Price_Group__c', 'Region__c', 'Sales_District__c', 'Sales_Group__c', 'Sales_Office__c']" />
+    <aura:attribute name="account" type="Account"/>
+    <aura:attribute name="accRcrdTypeName" type="String" default="Domestic"/>
+    <aura:attribute name="createdDate" type="String" default=""/>
+    <aura:attribute name="lastModifiedDate" type="String" default=""/>
+    <aura:attribute name="options_Currency_to_adopt__c" type="List" />
+    <aura:attribute name="options_Customer_Group__c" type="List" />
+    <aura:attribute name="options_Delivering_Plant__c" type="List" />
+    <aura:attribute name="options_Delivery_Priority__c" type="List" />
+    <aura:attribute name="options_Distribution_Channel__c" type="List" />
+    <aura:attribute name="options_Group_4__c" type="List" />
+    <aura:attribute name="options_Group_5__c" type="List" />
+    <aura:attribute name="options_Group_Name__c" type="List" />
+    <aura:attribute name="options_Payment_terms__c" type="List" />
+    <aura:attribute name="options_Price_Group__c" type="List" />
+    <aura:attribute name="options_Region__c" type="List" />
+    <aura:attribute name="options_Sales_District__c" type="List" />
+    <aura:attribute name="options_Sales_Group__c" type="List" />
+    <aura:attribute name="options_Sales_Office__c" type="List" />
+    <aura:attribute name="options_Currency_to_adopt__cDom" type="List" default="['USD', 'EURO', 'ZAR']"/>
+    <aura:attribute name="options_Customer_Group__cDom" type="List" default="['sundry account', 'closed accounts', 'SRSA Falken offtake', 'closed account imperial', 'OE', 'Export (Namibia, Botswana)', 'SRI Tyre Trading', 'closed accounts- domestic accounts', 'SRSA Replacement']"/>
+    <aura:attribute name="options_Delivering_Plant__cDom" type="List" default="['Bloemfontein', 'Durban Head Office', 'Durban Plant', 'Ladysmith Plant', 'Domestic Products', 'Cape Town', 'Durban', 'East London', 'Jet Park', 'Port Elizabeth', 'Warehouse V - Export', 'Warehouse V - Mrchantg']"/>
+    <aura:attribute name="options_Delivery_Priority__cDom" type="List" default="['High', 'Same Day Delivery', '1 Day Delivery', '2 Day Delivery', '3 Day Delivery', '4 Day Delivery']"/>
+    <aura:attribute name="options_Distribution_Channel__cDom" type="List" default="['Domestic']"/>
+    <aura:attribute name="options_Group_4__cDom" type="List" default="['Bad Debts Acc', 'Best Drive', 'Carriage Claim Acc', 'Conti Commercial', 'Dunlop Commercial', 'Dunlop Express', 'Dunlop Zone', 'Enterprise Dev', 'Fit &amp; Go', 'Government', 'Head Office Acc', 'Hi Q', 'Imperial Cargo Group', 'Inactive Replacement', 'Kwikfit', 'Motorcycle', 'OE Car and Truck', 'Other', 'OTR Direct', 'Parts &amp; Accessories', 'PCR Trailer Mnf', 'Point  S', 'Riaan', 'Speedy', 'SRSA Direct', 'Sundry', 'Supa Quick', 'TBR Fleets', 'TBR Trailer Mnf', 'TEC', 'Tiger Wheel and Tyre', 'Trentyre', 'Tyre House', 'Tyremart Grouped', 'Tyres 2000']"/>
+    <aura:attribute name="options_Group_5__cDom" type="List" default="['Direct OTR', 'Dunlop Direct', 'Export Other', 'Fleets', 'Goverment', 'Independents', 'OE', 'OE2', 'Off Take -Bought out', 'Sundry', 'TEC', 'Tier 1', 'Trailer manufacturer', 'Tyre mnf owned']"/>
+    <aura:attribute name="options_Group_Name__cDom" type="List" default="['Autowiel Group','Bandkorp Grouped','Barden Tyres Grouped','Champion Tyres Group','Edenglen Group','Fit It Group','Goolam Group','Royal Valc Grouped','Imperial Cargo Group','Phileza Grouped','Jodys Grouped','Kevin Green Group','Koenic Tyres Grouped','Kwik Fit Grouped','KZN Retreaders Group','Marks Tyres Grouped','Matie-Tyrepro Group','Maxi Quality Grouped','Minty&lsquo;s Grouped','Mr Tyre Xhaust Group','Neptune Group','Non Grouped','Northgate Group','Route Management','Thomas Grouped','Protea Tyres Grouped','Rbay Tyres Group','Rivonia Tyres Group','Roadmaster Group','Tirepoint Group','Transat / Ikwezi Grp','Tyre n Tube Grouped','Tyres 2000 Grouped','Metro Bus Group','Jack&lsquo;s Grouped','Lombard Tyres Groupd','Anglo Grouped','TT Hyper OVS Group','Prima Bande Group','Tiauto Grouped','Tyre &amp; More Grouped','Bluff Group','Charglen Group','Elbar Group','Frans Maritz Group','Goodhope Group','Kilotreads Group','Mike Gerhardy Group','Motyre Group','Oliver Tread Group','Stefan Davey Group','Super Wheel Group','Business Zone Group','TTR Group 1','TTR Group 2','Tyres 2 Go Group','Tyres&amp;Treads Group','CONTAINERS','ED CORNERS','Malas Grouped','COD ACCOUNTS','Imperial Tankers','SA Tyre Grouped','Henderson Group','Barlow Group','Tyre Corporation','Putco','Cash Sales Grouped','Staff Acc Grouped','KAL TIRE','AST Group','Tonnesens Group','JPF Group','Hi Way Group','Shabil Group','Atlas Group','Ragie Group','Dunlop Containers','Namibia Grp','Botswana  Grp','Cornwall Group','Du Toit Group']" />
+    <aura:attribute name="options_Payment_terms__cDom" type="List" default="['7 days', '30 Days', '37 Days', '45 Days', '47 Days Domestic', '60 Days', '67 Days Domestic', '7 days credit', '90 Days', 'Immediate Payment']"/>
+    <aura:attribute name="options_Price_Group__cDom" type="List" default="['CC Dark Red', 'C1 Red', 'C2 Yellow', 'C3 Green', 'C4 Blue', 'CP', 'S1', 'XX', 'NO']"/>
+    <aura:attribute name="options_Region__cDom" type="List" default="['Botswana', 'Eastern Cape', 'Free State', 'Gauteng', 'KwaZulu Natal', 'KZN', 'Lesotho', 'Limpopo', 'Mpumalanga', 'Namibia', 'Northern Cape', 'North West', 'Swaziland', 'Western Cape']"/>
+    <aura:attribute name="options_Sales_District__cDom" type="List" default="['Other', 'Gauteng West', 'KwaZulu Natal', 'Reg AGENTS', 'FS, NC &amp; LS', 'Reg PE', 'Reg EL', 'Gauteng East', 'Eastern Cape', 'South', 'Western Cape', 'Lim, Mpu &amp; Swz']"/>
+    <aura:attribute name="options_Sales_Group__cDom" type="List" default="['SRSA Plant', 'JHB-Gaugteng', 'JHB-North West', 'JHB-Limpopo', 'JHB-Mpumalanga', 'JHB-Swaziland', 'JHB-Namibia', 'JHB-Botswana', 'CT-Wester Cape', 'EL-Eastern Cape', 'PE-Eastern Cape', 'KZN-Kwazulu/Natal', 'BFN-Free State', 'BFN-Northern Cape', 'BFN-Lesotho']"/>
+    <aura:attribute name="options_Sales_Office__cDom" type="List" default="['Head office', 'Closed (DBN factory)', 'Ladysmith Factory', 'CapeTown', 'Durban', 'East London', 'Jet Park Johannesburg', 'Port Elizabeth']"/>
+    
+    <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+        <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Name}" disabled="true" label="Account Name" />
+        <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Stage__c}" disabled="true" label="Stage" />
+        <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Trading_As_Name__c}" disabled="true" label="Trading As Name" />
+        <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Owner.Name}" disabled="true" label="Account Owner" />
+        <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Phone}" disabled="true" label="Phone" />
+
+        <lightning:select class="slds-size_1-of-2 field" label="Region" value="{!v.account.Region__c}" disabled="true">
+            <aura:iteration items="{!v.options_Region__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Region__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+
+        <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Email_Address__c}" disabled="true" label="Email Address" />
+        <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Parent.Name}" disabled="true" label="Parent Account" />
+        
+        <lightning:select class="slds-size_1-of-2 field" label="Currency" value="{!v.account.Currency_to_adopt__c}" disabled="true">
+            <aura:iteration items="{!v.options_Currency_to_adopt__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Currency_to_adopt__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+        <lightning:select class="slds-size_1-of-2 field" label="Group Name" value="{!v.account.Group_Name__c}" disabled="true">
+            <aura:iteration items="{!v.options_Group_Name__c}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Group_Name__c)}"/>
+            </aura:iteration>
+        </lightning:select>
+
+        <lightning:accordion aura:id="accordion" activeSectionName="sections" class="accordion">
+            <lightning:accordionSection name="addrsInfo" label="Address Information">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <lightning:formattedText value="Billing Address" class="slds-size_1-of-2 field"/>
+                    <lightning:formattedText value="Shipping Address" class="slds-size_1-of-2 field"/>
+                    <lightning:formattedAddress class="slds-size_1-of-2 field"
+                                                street="{!v.account.BillingStreet}"
+                                                city="{!v.account.BillingCity}"
+                                                country="{!v.account.Country__c}"
+                                                province="{!v.account.BillingState}"
+                                                postalCode="{!v.account.BillingPostalCode}"/>
+
+                    <lightning:formattedAddress class="slds-size_1-of-2 field"
+                                                street="{!v.account.ShippingStreet}"
+                                                city="{!v.account.ShippingCity}"
+                                                country="{!v.account.Country__c}"
+                                                province="{!v.account.ShippingState}"
+                                                postalCode="{!v.account.ShippingPostalCode}"/>
+                </div>
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="salesmanReport" label="Salesman's Report">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <lightning:select class="slds-size_1-of-2 field" label="Distribution Channel" value="{!v.account.Distribution_Channel__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Distribution_Channel__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Distribution_Channel__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Price Group" value="{!v.account.Price_group__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Price_Group__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Price_group__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+
+                    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.RecordType.Name}" disabled="true" label="Account Record Type" />
+
+                    <lightning:select class="slds-size_1-of-2 field" label="Payment Terms" value="{!v.account.Payment_terms__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Payment_terms__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Payment_terms__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Sales Office" value="{!v.account.Sales_Office__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Sales_Office__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Sales_Office__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Delivery Priority" value="{!v.account.Delivery_Priority__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Delivery_Priority__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Delivery_Priority__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Sales Group" value="{!v.account.Sales_Group__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Sales_Group__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Sales_Group__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Delivering Plant" value="{!v.account.Delivering_Plant__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Delivering_Plant__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Delivering_Plant__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Customer Group" value="{!v.account.Customer_Group__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Customer_Group__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Customer_Group__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Classification 1" value="{!v.account.Group_4__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Group_4__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Group_4__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Sales District" value="{!v.account.Sales_District__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Sales_District__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Sales_District__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select class="slds-size_1-of-2 field" label="Classification 2" value="{!v.account.Group_5__c}" disabled="true">
+                        <aura:iteration items="{!v.options_Group_5__c}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" selected="{!equals(item.value,v.account.Group_5__c)}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="salesmanReport" label="Salesman's Report">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.Dunlop_Commitment__c}" disabled="true" label="Dunlop Commitment" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.Turnover_Potential__c}" disabled="true" label="Turn Over Potential" step="0.01"/>
+                </div>
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="ageAnalysis" label="Age Analysis">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.X0_30_Days__c}" disabled="true" label="0-30 Days" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.Current__c}" disabled="true" label="Current" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.X30_60_Days__c}" disabled="true" label="30-60 Days" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.Unapplied__c}" disabled="true" label="Unapplied" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.X60_90_Days__c}" disabled="true" label="60-90 Days" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.Overdue__c}" disabled="true" label="Overdue" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.X90_180_Days__c}" disabled="true" label="90-180 Days" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.Total__c}" disabled="true" label="Total" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.X180_360_Days__c}" disabled="true" label="180-360 Days" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.Last_Payment__c}" disabled="true" label="Last Payment" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" formatter="currency" value="{!v.account.X360_Days__c}" disabled="true" label="> 360 Days" step="0.01"/>
+                    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.lastPaymentDate}" disabled="true" label="Last Payment Date" />
+                </div>
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="minPremReq" label="Minimum Premises Requirement">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="80m2 Under Cover Fitting Area" name="fittingArea" checked="{!v.account.FittingArea__c}" disabled="true"/>
+                    <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="Counter and Reception Area" name="counter" checked="{!v.account.Counter_and_Reception_Area__c}" disabled="true"/>
+                    <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="Restrooms" name="restrooms" checked="{!v.account.Restrooms__c}" disabled="true"/>
+                </div>
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="minEquipReq" label="Minimum Equipment Requirements">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="1 x Fitting Machine" name="fitMachine" checked="{!v.account.Fitting_Machine__c}" disabled="true"/>
+                    <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="1 x Compressor" name="compressor" checked="{!v.account.Compressor__c}" disabled="true"/>
+                    <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="2X Lower Level Lifts" name="lifts" checked="{!v.account.Lower_Level_Lifts__c}" disabled="true"/>
+                    <lightning:input class="slds-size_1-of-2 field" type="checkbox" label="1X Electric Balancing Machine" name="blanceMachine" checked="{!v.account.Electric_Balancing_Machine__c}" disabled="true"/>
+                </div>
+            </lightning:accordionSection>
+
+            <lightning:accordionSection name="minEquipReq" label="System Information">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.createdDate}" disabled="true" label="Created Date" />
+                    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.lastModifiedDate}" disabled="true" label="Last Modified Date" />
+                    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.CreatedBy.Name}" disabled="true" label="Created By" />
+                    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.LastModifiedBy.Name}" disabled="true" label="Last Modified By" />
+                </div>
+            </lightning:accordionSection>
+        </lightning:accordion>
+    </div>
+</aura:component>

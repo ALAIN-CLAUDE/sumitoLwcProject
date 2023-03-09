@@ -1,0 +1,16 @@
+<aura:component >
+	<aura:attribute name="account" type="Account" access="public"/>
+    <aura:attribute name="options_Ownership" type="List" access="public"/>
+    <aura:attribute name="options_Industry" type="List" access="public"/>
+    <aura:attribute name="options_Currency_to_adopt__c" type="List" access="public"/>
+    
+    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Name}" required="true" label="Account Name" />
+    <lightning:input class="slds-size_1-of-2 field" type="tel" pattern="[0-9]{10}" name="name" value="{!v.account.Phone}" required="true" label="Phone" />
+    <lightning:input class="slds-size_1-of-2 field" type="tel" pattern="[0-9]{10}" name="name" value="{!v.account.Fax}" label="Fax" />
+    <lightning:input class="slds-size_1-of-2 field" type="url" name="name" value="{!v.account.Website}" label="Website" />
+    <lightning:select class="slds-size_1-of-2 field" label="Account Currency" value="{!v.account.Currency_to_adopt__c}" required="true">
+        <aura:iteration items="{!v.options_Currency_to_adopt__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+</aura:component>

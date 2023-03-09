@@ -1,0 +1,8 @@
+<aura:component controller="SubmitForApprovalCtrl" implements="force:lightningQuickAction,force:hasRecordId">
+    <aura:attribute name="comments" type="String" default=""/>
+    <div>
+        <lightning:textarea style="margin-right: -14px;" value="{!v.comments}" placeholder="add your comments" label="" maxlength="300" messageWhenTooLong="A maximum of 300 characters are allowed." />
+        <br/>
+        <lightning:button class="button" variant="brand" label="Submit" onclick="{!c.saveRecord}" />
+    </div>
+</aura:component>

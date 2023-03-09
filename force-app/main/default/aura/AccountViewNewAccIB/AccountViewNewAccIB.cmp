@@ -1,0 +1,83 @@
+<aura:component >
+	<aura:attribute name="account" type="Account" access="public"/>
+    <aura:attribute name="options_Currency_to_adopt__c" type="List" access="public"/>
+    <aura:attribute name="options_Delivering_Plant__c" type="List" access="public"/>
+    <aura:attribute name="options_Delivery_Priority__c" type="List" access="public"/>
+    <aura:attribute name="options_Delivery_terms__c" type="List" access="public"/>
+    <aura:attribute name="options_Distribution_Channel__c" type="List" access="public"/>
+    <aura:attribute name="options_Forwarding_Agent_Name__c" type="List" access="public"/>
+    <aura:attribute name="options_Group_4__c" type="List" access="public"/>
+    <aura:attribute name="options_Group_5__c" type="List" />
+    <aura:attribute name="options_Inco2__c" type="List" />
+    <aura:attribute name="options_Payment_Terms__c" type="List" access="public"/>
+    <aura:attribute name="options_Price_Group__c" type="List" access="public"/>
+    <aura:attribute name="options_Shipping_Company__c" type="List" access="public"/>
+
+	<lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Name}" required="true" label="Account Name" />
+    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Trading_As_Name__c}" required="true" label="Trading As Name" />
+
+    <lightning:select class="slds-size_1-of-2 field" label="Distribution Channel" required="true" value="{!v.account.Distribution_Channel__c}" >
+        <aura:iteration items="{!v.options_Distribution_Channel__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+
+    <lightning:select class="slds-size_1-of-2 field" label="Currency" value="{!v.account.Currency_to_adopt__c}" required="true">
+        <aura:iteration items="{!v.options_Currency_to_adopt__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+
+    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Port_of_destination__c}" required="true" label="Port of Destination" />
+    <lightning:input class="slds-size_1-of-2 field" name="name" value="{!v.account.Shipping_Company__c}" required="true" label="Shipping Company" />
+
+    <lightning:select class="slds-size_1-of-2 field" label="Inco2" value="{!v.account.Inco2__c}" required="true">
+        <aura:iteration items="{!v.options_Inco2__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+
+    <lightning:select class="slds-size_1-of-2 field" label="Forwarding Agent Name" value="{!v.account.Forwarding_Agent_Name__c}" required="true">
+        <aura:iteration items="{!v.options_Forwarding_Agent_Name__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+
+    <lightning:select class="slds-size_1-of-2 field" label="Delivery Terms" value="{!v.account.Delivery_terms__c}" required="true">
+        <aura:iteration items="{!v.options_Delivery_terms__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select class="slds-size_1-of-2 field" label="Delivery Priority" required="true" value="{!v.account.Delivery_Priority__c}" >
+        <aura:iteration items="{!v.options_Delivery_Priority__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select class="slds-size_1-of-2 field" label="Price Group" value="{!v.account.Price_group__c}" required="true">
+        <aura:iteration items="{!v.options_Price_Group__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select class="slds-size_1-of-2 field" label="Classification 1" value="{!v.account.Group_4__c}" required="true">
+        <aura:iteration items="{!v.options_Group_4__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select class="slds-size_1-of-2 field" label="Payment Terms" value="{!v.account.Payment_terms__c}" required="true">
+        <aura:iteration items="{!v.options_Payment_Terms__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select class="slds-size_1-of-2 field" label="Classification 2" value="{!v.account.Group_5__c}" required="true">
+        <aura:iteration items="{!v.options_Group_5__c}" var="item">
+            <option text="{!item.label}" value="{!item.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:input class="slds-size_1-of-2 field" name="name" type="number" value="{!v.account.Credit_Limit_Requested__c}" label="Credit Limit Requested" />
+</aura:component>

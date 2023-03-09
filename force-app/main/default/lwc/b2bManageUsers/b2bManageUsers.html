@@ -1,0 +1,59 @@
+<template>
+    <div>
+        <template if:true={isLoading}>
+            <div class="backgroundInverse">
+                <lightning-spinner alternative-text="Loading" variant="base" size="large"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={showSelectProfileModal}>
+            <c-b2b-select-user-profile-modal onclose={handleClose} user-profile-name={userProfileName} user-id={userId} current-user-profile-id={currentUserProfileId}>
+            </c-b2b-select-user-profile-modal>
+        </template>
+
+        <template if:true={showUserAccessModal}>
+            <c-b2b-manage-user-access-modal onclose={handleClose} user-id={userId} user-name={userName} is-user-active={isCurrentUserActive}>
+            </c-b2b-manage-user-access-modal>
+        </template>
+
+        <template if:false={usersExist}>
+            <h1 class="noUsersHeader">You have not added any users yet.</h1>
+        </template>
+
+        <template if:true={usersExist}>
+            <table class="userTable" id="users">
+                <tr>
+                    <th class="leftColumns"><b>Name</b></th>
+                    <th class="leftColumns"><b>Email</b></th>
+                    <th class="leftColumns"><b>Is User Active</b></th>
+                    <th class="leftColumns"><b>Current Profile</b></th>
+                    <th class="leftColumns"><b>Last Login Date</b></th>
+                    <th class="leftColumns" style="border-right: 0px;"></th>
+                    <th class="leftColumns" style="border-left: 0px;"></th>
+                </tr>   
+                <template for:each={users} for:item="user" for:index="index">
+                    <tr key={user.Id}>
+                        <td class="leftColumns">{user.FirstName}&nbsp;{user.LastName}</td>
+                        <td class="leftColumns">{user.Email}</td>
+                        <td class="leftColumns">
+                            <template if:true={user.IsActive}>Yes</template>
+                            <template if:false={user.IsActive}>No</template>
+                        </td>
+                        <td class="leftColumns">{user.profileName}</td>
+                        
+                        <td class="leftColumns"> 
+                            <lightning-formatted-date-time value={user.LastLoginDate} year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                        minute="2-digit" time-zone="UTC" time-zone-name="short" hour12={ampm}></lightning-formatted-date-time>
+                        </td>
+                        <td>
+                            <lightning-button data-name={user.updateName} variant="brand" label="Change Profile" title="Change User Profile" onclick={changeProfile} class="slds-m-left_x-small"></lightning-button>
+                        </td>
+                        <td>
+                            <lightning-button data-name={user.resetName} variant="brand-outline" label="Manage User Access" title="Manage User Access" onclick={manageUserAccess} class="slds-m-left_x-small"></lightning-button>
+                        </td>
+                    </tr>
+                </template>
+            </table>
+        </template>
+    </div>
+</template>

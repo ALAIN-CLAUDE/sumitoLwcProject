@@ -1,0 +1,43 @@
+<template>
+    <div class="marketing-container">
+
+        <div class="header-container"> <div class="header">Marketing Rands balance</div></div>
+        <div class="slds-grid boxes">
+            <div class="slds-col box earned">
+                <img class="icon" src={rands_img}>
+                <span class="title">Marketing Rands Earned</span>
+                <div class="value-earned">
+                    <template if:true={MR_Rands}>
+                        <lightning-formatted-number value={MR_Rands} format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                    </template>
+
+                    <template if:false={MR_Rands}>
+                        0
+                    </template>
+                    </div>
+                <div class="date">
+                    <!-- Total balance 16. 03. 2022 -->
+                </div>
+            </div>
+
+
+            <div class="slds-col box expiring">
+                <img class="icon" src={exp_img}>
+                <span class="title">Marketing Rands Expiring</span>
+                <div class="value-expiring">
+                    <template if:true={MR_Exp}>
+                        <lightning-formatted-number value={MR_Exp} format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                    </template>
+
+                    <template if:false={MR_Exp}>
+                        0
+                    </template>
+                </div>
+                <div class="date">
+                    <!-- Expiring this month 31. 03. 2022 -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

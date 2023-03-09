@@ -1,0 +1,1395 @@
+.THIS .body{
+        margin-left: auto;
+        margin-right: auto;
+        /* max-width: 1280px; */
+    }
+
+/* Credit Limit Banner */
+.THIS .cB2B_CreditLimit {
+    display: flex;
+}
+
+.THIS .cB2B_CreditLimit .limits {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: fit-content !important;
+}
+
+/* My Lists */
+.cB2B_NT_Theme .slds-tabs_default__nav .slds-tabs_default__item {
+    padding: 0 15px !important;
+}
+
+.cB2B_NT_Theme .slds-button_brand {
+    width: 180px;
+}
+
+.THIS button[b2b_buyer_cart-addToCartButton_addToCartButton] {
+    flex-grow: 0;
+}
+
+.cB2B_NT_Theme b2b_buyer_cart-add-to-cart-button {
+    justify-content: end;
+}
+
+
+    
+.THIS .comm-user-profile-menu__trigger-p, .THIS .slds-truncate slds-text-title_bold{
+    color: #fff;
+}
+
+
+.THIS .get-in-touch{
+    padding: 50px 0 50px 150px;
+}
+
+.THIS .get-in-touch a{
+    padding: 20px;
+    background-color: #1B89C9;
+    color: #fff !important;
+}
+
+.THIS .navBarContainer{
+    background-color: #003459 !important;
+    height: 40px;
+    align-items: center;
+}
+
+.THIS .slds-list__item button:hover {
+    background-color: #003459 !important;
+    
+}
+
+
+.THIS .comm-drilldown-navigation__list[community_navigation-drilldownNavigationList_drilldownNavigationList] a:hover {
+    color: white !important;
+    background-color: #002a47 !important;
+    
+}
+
+.THIS .comm-drilldown-navigation__list[community_navigation-drilldownNavigationList_drilldownNavigationList] a {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.829)
+}
+
+.THIS .comm-drilldown-navigation__list[community_navigation-drilldownNavigationList_drilldownNavigationList] {
+    border: 0.1rem solid #fff;
+    border-radius: 0.25rem;
+}
+
+.THIS .dropDownListItem {
+    background-color: #003459;
+    
+}
+
+
+.THIS .dropDownListItem a {
+    color: #fff;
+    
+}
+
+.THIS .dropDownListItem:hover {
+    background-color: #002A47;
+}
+
+.THIS .comm-drilldown-navigation__bar[community_navigation-drilldownNavigationBar_drilldownNavigationBar] a:hover[community_navigation-drilldownNavigationBar_drilldownNavigationBar], .THIS .comm-drilldown-navigation__bar[community_navigation-drilldownNavigationBar_drilldownNavigationBar] a:active[community_navigation-drilldownNavigationBar_drilldownNavigationBar], .THIS .comm-drilldown-navigation__bar[community_navigation-drilldownNavigationBar_drilldownNavigationBar] a:focus[community_navigation-drilldownNavigationBar_drilldownNavigationBar], .THIS .comm-drilldown-navigation__bar[community_navigation-drilldownNavigationBar_drilldownNavigationBar] button:hover[community_navigation-drilldownNavigationBar_drilldownNavigationBar], .THIS .comm-drilldown-navigation__bar[community_navigation-drilldownNavigationBar_drilldownNavigationBar] button:active[community_navigation-drilldownNavigationBar_drilldownNavigationBar], .THIS .comm-drilldown-navigation__bar[community_navigation-drilldownNavigationBar_drilldownNavigationBar] button:focus[community_navigation-drilldownNavigationBar_drilldownNavigationBar] {
+    background-color: #002a47 !important;
+}
+
+.THIS .horizontalMenuItem{
+    color: #fff !important;
+}
+
+.THIS .forceCommunityRichText .uiOutputRichText .sfdcCbVideoContainer{
+    max-width: 800px;
+    margin: 100px auto;
+}
+
+
+
+.THIS .js-content .slds-hyphenate .slds-col .slds-grid .slds-grid_vertical .slds-align-center{
+    width: 100%;
+}
+
+.THIS .js-content-subtitle .slds-rich-text-editor__output a{
+    padding: 100%;
+    color: transparent;
+
+}
+
+
+.THIS .footers-container {
+    background-color: #24aae1;
+    padding: 20px 20px 60px 20px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+}
+
+.THIS  .footers-container button {
+    padding: 4px 56px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.THIS  .footers-container .links-2 li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.THIS  .footers-container .links-3 li {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.THIS .footers-container .white-text {
+    color: #fff;
+    width: 70px;
+}
+
+.THIS .footer-container .links-column{
+    padding: 0 40px;
+}
+
+.THIS .footer-container .links a{
+    color: #003357;
+}
+.THIS .footer-container .links a:hover{
+    color: #003357;
+}
+
+
+.THIS .footer-container .footer-logo{
+    margin: 15px 0 20px;
+}
+
+.THIS .footer-container .links .heading{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0 10px;
+    color: #fff;
+}
+
+.THIS .footer-container .links li{
+    padding: 0;
+}
+
+.THIS .footer-container .links ul{
+    padding: 0;
+}
+
+.THIS .footer-container .links li::before{
+    display: none;
+}
+
+.THIS .comm-user-profile-menu .slds-dropdown-trigger .comm-user-profile-menu__dropdown-ctn{
+    background-color: #003459;
+    padding: 10px 0;
+}
+
+
+.THIS .comm-user-profile-menu .slds-dropdown__list .slds-dropdown__item a{
+    background-color: #003459;
+    color: #fff;
+}
+
+.THIS .comm-user-profile-menu .slds-dropdown__list .slds-dropdown__item a:hover{
+    background: #002a47;
+}
+
+.THIS .comm-page-home [data-region-name="footer"] .ui-widget{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 60px !important;
+}
+
+.THIS [data-region-name="footer"] .ui-widget:last-of-type{
+    border-bottom: none;
+}
+
+/* .THIS .comm-page-login-home .salesforceIdentityLoginBody2 .cCenterPanel{
+    min-width: 420px;
+    text-align: center;
+}
+
+.THIS .comm-page-login-home .salesforceIdentityLoginBody2 .cCenterPanel::before{
+
+    background-color: #24aae1;
+}
+
+.THIS .comm-page-login-home .salesforceIdentityLoginBody2 .inputContainer{
+    text-align: left;
+}
+
+.THIS .comm-page-login-home .salesforceIdentityLoginBody2 .loginButton{
+    border: 1px solid #fff;
+}
+
+.THIS .cCenterPanel .salesforceIdentityForgotPassword2 .loginButton{
+    border: 1px solid #fff;
+}
+
+.THIS .comm-page-login-home .salesforceIdentityLoginBody2 .communityLogo{
+    margin-bottom: 25px;
+    width: 70%;
+} */
+
+.THIS b2b_buyer_cart-add-all-items-to-cart-button button{
+text-transform: capitalize !important;
+font-size: 13px;
+}
+
+.THIS b2b_buyer_cart-add-to-cart-button{
+    flex-basis: 30% !important;
+}
+
+.THIS b2b_buyer_cart-add-to-cart-button button{
+    text-transform: capitalize !important;
+    font-size: 13px;
+}
+
+.THIS b2b_buyer_wishlists-header button{
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.THIS b2b_buyer_wishlists-add-to-list-button[b2b_buyer_product_details-purchaseOptions_purchaseOptions] {
+    height: 2.5rem;
+    flex-shrink: 0;
+    width: 100px;
+}
+
+.THIS button[b2b_buyer_wishlists-addToListButton_addToListButton] {
+    text-transform: none;
+    flex-grow: 1;
+    padding: 0;
+    font-weight: 600;
+}
+
+.THIS .content-actions button{
+    font-size: 13px;
+}
+
+.THIS .slds-tabs_default__nav .slds-tabs_default__item {
+    padding: 0;
+}
+
+.THIS cb-section_column slds-size_12-of-12 slds-max-medium-size_12-of-12 {
+    background-color: #000;
+}
+
+
+.THIS .contentRegion .salesforceIdentityLoginForm2 a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.THIS .logoImage{
+    width: 200px !important;
+    height: 50px !important;
+}
+
+
+.THIS .comm-content-header{
+    padding: 0 !important;
+}
+
+.THIS .comm-page-home .ui-widget:nth-of-type(3){
+    background-color: #003459;
+}
+
+.THIS .comm-page-home .ui-widget:nth-of-type(3)  [data-region-name='1']{
+        height: 100%;
+        background-color: transparent;
+    }
+
+    .THIS .comm-page-home .ui-widget:nth-of-type(3) .text{
+        font-size: 16px;
+        color: #003357;
+    }
+    .THIS .comm-page-home .ui-widget:nth-of-type(3) .ui-widget{
+        height: 100%;
+    }
+
+    .THIS .comm-page-home .ui-widget:nth-of-type(2) .slds-card{       
+    border: none;
+}
+
+    .THIS .comm-page-home .ui-widget:nth-of-type(3) .cb-section_column{
+        padding: 30px 0;
+    }
+
+    .THIS .loyalty-program{
+        padding: 80px 30px;
+        background: #f2f2f2;
+    }
+    .THIS .loyalty-program .header{
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 17px;
+    }
+
+    .THIS .loyalty-program .button{
+    margin-top: 98px;
+    padding: 10px;
+    color: #fff;
+    background-color: #003459;
+    font-weight: 600;
+    border: none;
+    }
+
+
+    .THIS .comm-page-detail-0ZG{
+        max-width: 1280px;
+        margin: auto;
+    }
+
+    .THIS .comm-page-detail-0ZG .results-container .results-layout .cardContainerList .slds-button{
+        width: 100px;
+        background-color: #003357;
+        padding: 0;
+    }
+
+    .THIS .slds-button .slds.button-brand{
+        background-color: #003459;
+    }
+
+
+    .THIS .comm-page-detail-0ZG .results-container .results-layout .selector-input{
+        border: 1px solid black;
+    width: 30px;
+}
+
+.THIS .comm-page-detail-0ZG .results-container .results-layout .quantity-selector .controls{
+    border: none;
+}
+
+
+.THIS .salesforceIdentityForgotPassword2 .siteforceSldsOneColLayout{
+    width: 414px;
+}
+
+.THIS .comm-page-home .ui-widget:nth-of-type(4) .slds-grid{       
+        border: none;       
+}
+
+.THIS .comm-page-home .ui-widget:nth-of-type(4) .slds-col a{       
+    color: black;
+    font-size: 16px;
+}
+
+.THIS .comm-page-custom-marketing .ui-widget:nth-of-type(2) .slds-grid{
+    border: none;
+}
+
+.THIS .comm-page-custom-marketing .ui-widget:nth-of-type(2) .slds-p-around_none .slds-scrollable_none{
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.THIS .comm-page-custom-marketing .ui-widget:nth-of-type(2) .js-content-title{
+    font-size: 16px;
+    color: #003459;
+}
+
+.THIS .slds-icon-utility-download svg {
+    fill: #003357;
+    width: 20px;
+    height: 20px;
+}
+
+.THIS .slds-icon-utility-upload svg {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+}
+
+.THIS nav ul span {
+    text-transform: capitalize;
+}
+
+.THIS .siteforceDesignTimeSection.ui-sortable-handle:first-child {
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 20%);
+    transition: 0.3s;
+}
+
+.THIS .comm-user-profile-menu__trigger p {
+    color: #383838;
+}
+
+.THIS community_user-user-profile-menu .slds-avatar_circle {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+    top: 1px;
+    position: relative;
+    background-image: url('/sumitomorubbersouthafrica/s/sfsites/c/resource/Company_Logo/company_logo.svg');
+}
+
+.THIS community_user-user-profile-menu .slds-avatar_circle img {
+    visibility: hidden;
+}
+
+.THIS community_user-user-profile-menu slds-icon-utility-notification {
+    position: relative;
+    top: 7px;
+    color: #fff;
+}
+
+.THIS .rightRegion .slds-global-actions__item-action .headerButtonBody{
+    width: 30px;
+    height: 30px;
+    background: #003459;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.THIS .rightRegion .slds-icon-utility-notification {
+    position: relative;
+    top: 7px;
+    color: #fff;
+}
+
+.THIS .rightRegion .slds-icon-utility-notification svg {
+    width: 15px;
+    height: 15px;
+}
+
+.THIS .forceCommunityThemeHeaderB2B .cartButton svg {
+    fill: #fff;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 7px;
+    left: -8px;
+}
+
+.THIS b2b_buyer_cart-badge .slds-icon_container  {
+    width: 30px;
+    height: 30px;
+    background: #003459;
+    border-radius: 50%;
+    top: -2px;
+    position: relative;
+}
+
+.THIS b2b_buyer_cart-constrained-quantity-selector .controls {
+    border: none;
+}
+
+
+/* Buttons */
+.THIS .slds-button_neutral {
+    border-color: #003357;
+    color: #003357;
+    height: 40px;
+    border-radius: 0;
+}
+
+.THIS .slds-button_brand {
+    background-color: #003357;
+    border-color: #003357;
+    height: 40px;
+    border-radius: 0;
+}
+
+.THIS .slds-button_brand:hover,
+.THIS .slds-button_outline-brand:hover {
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+.THIS .slds-button_outline-brand:hover {
+    background: #fff;
+}
+
+.THIS .slds-button_outline-brand {
+    height: 40px;
+    border-radius: 0;
+}
+
+.THIS .button-full-width button {
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.THIS .decrement-btn,
+.THIS .increment-btn {
+    border: none;
+}
+
+.THIS button[disabled] {
+    background: #c9c7c5;
+    border: 1px solid #c9c7c5;
+}
+
+.THIS button {
+    border-radius: 0;
+}
+
+/* Buttons */
+
+.THIS .selector-input {
+    border: 1px solid #797979;
+    width: 40px;
+}
+
+.THIS b2b_buyer_cart-contents h1,
+.THIS b2b_buyer_orders-header h1,
+.THIS commerce_checkout-order-confirmation h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #003357;
+}
+
+.THIS b2b_buyer_cart-contents .sort-menu {
+    display: none;
+}
+
+.THIS b2b_buyer_cart-contents .details a {
+    color: #003459;
+    font-size: 16px;
+}
+
+.THIS b2b_buyer_pricing-formatted-price.negotiated-price {
+    text-align: right;
+    color: #003459;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.THIS b2b_buyer_cart-constrained-quantity-selector span {
+    border-bottom: 0;
+}
+.THIS .line-item-properties .quantity-selector-promotions,
+.THIS .line-item-properties .price {
+    align-self: center;
+}
+
+.THIS .total-price[b2b_buyer_cart-summary_summary] b2b_buyer_pricing-formatted-price[b2b_buyer_cart-summary_summary] {
+    font-size: 13px;
+    font-weight: bold;
+    color: #003459 !important;
+}
+
+.THIS b2b_buyer_cart-summary .slds-text-heading_medium {
+    font-size: 12px;
+}
+
+.THIS .summary-header[b2b_buyer_cart-summary_summary] {
+    font-size: 16px;
+    color: #003357;
+    font-weight: bold;
+}
+
+.THIS .comm-page-checkout .slds-global-header_container{
+    background-color: #24aae1;
+}
+
+.THIS .comm-page-checkout .credit-limit-container{
+    display: none;
+}
+
+.THIS .comm-page-checkout commerce_checkout-order-address{
+    border: none;
+}
+
+.THIS .comm-page-checkout commerce_checkout-order-address .slds-box{
+    border: none;
+}
+
+
+.THIS .checkoutHeader[commerce_checkout-checkoutHeader_checkoutHeader] {
+    width: 67%;
+    box-shadow: none;
+}
+
+.THIS commerce_checkout-checkout-header .slds-global-header_container {
+    background: #24aae1;
+}
+
+.THIS commerce_checkout-checkout-header .slds-global-actions svg {
+    fill: #fff;
+}
+
+.THIS b2b_buyer_orders-record-action-container .slds-button_neutral {
+    background-color: #003357;
+    border-color: #003357;
+    color: #fff;
+    word-break: unset;
+}
+
+.THIS .width_20[b2b_buyer_orders-record_record] {
+    flex-direction: row;
+}
+
+.THIS b2b_buyer_orders-record-actions.slds-m-bottom_medium {
+    margin-bottom: 0;
+}
+
+.THIS b2b_buyer_orders-record-list-header b2b_buyer_orders-date-filter .slds-align-middle.slds-m-right_small {
+    display: none;
+}
+
+.THIS b2b_buyer_orders-record .slds-box {
+    border: none;
+    border-bottom: 1px solid #e3e4db;
+}
+
+.THIS b2b_buyer_orders-record .slds-box:first-child {
+    border-top: 1px solid #e3e4db;
+}
+
+.THIS b2b_buyer_orders-record-actions button {
+    padding: 4px 24px;
+}
+
+.THIS b2b_buyer_orders-record b2b_buyer_orders-record-link {
+    border: 1px solid #003357;
+    padding: 9px 18px;
+    margin-left: 12px;
+}
+
+@media screen and (max-width:632px) {
+    .THIS b2b_buyer_orders-record b2b_buyer_orders-record-link{
+    margin: 5px 0;
+    }
+}
+
+.THIS b2b_buyer_orders-record b2b_buyer_orders-record-link a {
+    color: #003357;
+    word-break: unset;
+}
+
+.THIS b2b_buyer_orders-record b2b_buyer_orders-record-link:hover {
+    cursor: pointer;
+}
+
+.THIS b2b_buyer_orders-record b2b_buyer_orders-record-link a:hover {
+    text-decoration: none;
+}
+
+.THIS b2b_buyer_orders-record b2b_buyer_orders-record-fields .slds-grid.slds-wrap{
+    flex-wrap: wrap;
+}
+
+.THIS b2b_buyer_orders-record b2b_buyer_orders-record-fields .slds-truncate.slds-p-right_small.slds-grid{
+    flex-direction: column;
+}
+
+.THIS b2b_buyer_orders-record b2b_buyer_orders-record-fields .slds-truncate.slds-p-right_small.slds-grid.slds-truncate{
+    overflow: unset;
+}
+
+
+.THIS b2b_buyer_orders-record-list-header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #e3e4db;
+    margin-bottom: 15px;
+    color: #003357;
+}
+
+.THIS b2b_buyer_orders-record-list-header h1,
+.THIS b2b_buyer_orders-record-list-header .slds-grid {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.THIS b2b_buyer_orders-record-list-header .slds-wrap {
+    padding-bottom: 25px;
+}
+
+.THIS b2b_buyer_orders-date-filter .slds-grid {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-right: 10px;
+}
+
+.THIS b2b_buyer_orders-record-list-header .slds-p-top_medium:last-child {
+    margin-bottom: 10px;
+}
+
+.THIS b2b_buyer_orders-date-filter lightning-button-icon svg {
+    fill: #003357;
+}
+
+.THIS b2b_buyer_orders-date-filter .slds-p-top_large.slds-align-middle button {
+    border: 1px solid #003357;
+}
+
+.THIS b2b_buyer_orders-date-filter button {
+    padding: 4px 20px;
+}
+
+.THIS b2b_buyer_orders-date-filter lightning-button-icon button {
+    padding: 0
+}
+
+.THIS .slds-form-element__control input {
+    border: 1px solid #797979;
+    border-radius: 0;
+    padding: 4px 10px;
+}
+
+.THIS b2b_buyer_orders-record-fields span.slds-grid {
+    color: #003357;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.THIS b2b_buyer_orders-record-fields .four-column-layout {
+    display: block;
+}
+
+.THIS b2b_buyer_orders-record-fields b2b_buyer_product_details-field-display {
+    margin-top: 5px;
+}
+
+.THIS .forceCommunityCheckoutFlow {
+    border: none;
+}
+
+.THIS b2b_buyer_orders-details .details-card,
+.THIS b2b_buyer_orders-totals .totals-card {
+    background: #f2f2f2 !important;
+    border-radius: 3px !important;
+    border: 1px solid  #f2f2f2;
+}
+
+.THIS b2b_buyer_orders-details .field-item {
+    display: inline-block;
+    width: 100%;
+}
+
+.THIS b2b_buyer_orders-details b2b_buyer_product_details-field-display,
+.THIS b2b_buyer_orders-details b2b_buyer_orders-record-field-link-container a {
+    color: #383838;
+    float: right;
+}
+
+.THIS b2b_buyer_orders-details lightning-formatted-rich-text,
+.THIS b2b_buyer_orders-totals lightning-formatted-rich-text {
+    color: #003357;
+    font-size: 16px;
+}
+
+.THIS b2b_buyer_orders-details h2 span,
+.THIS b2b_buyer_orders-totals h3 span {
+    color: #003357;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.THIS b2b_buyer_orders-product-title a {
+    font-size: 16px;
+    color: #003459;
+}
+
+.THIS b2b_buyer_orders-header button {
+     padding: 4px 60px;
+}
+
+.THIS .chevron .slds-button__icon{
+    color: #fff;
+}
+
+.THIS .chevron .slds-button:hover{
+    border: 1px solid #fff;
+}
+
+.THIS .slds-breadcrumb {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.THIS commerce_checkout-order-address h2,
+.THIS flowruntime-input-wrapper2 .flowruntime-input-label span {
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.THIS flowruntime-input-wrapper2 .flowruntime-input-label span {
+    padding-left: 8px;
+}
+
+.THIS commerce_checkout-order-address h2 {
+    margin-top: 15px;
+}
+
+.THIS commerce_checkout-order-address .slds-box {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e3e4db;
+}
+
+.THIS commerce_checkout-order-address {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e3e4db;
+    padding-bottom: 20px;
+}
+
+.THIS lightning-textarea textarea {
+    border-radius: 0;
+    border-color: #000000;
+}
+
+.THIS flowruntime-input-wrapper2 textarea {
+    margin-top: 6px;
+}
+
+.THIS commerce_checkout-order-confirmation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.THIS commerce_checkout-order-confirmation h1 {
+    border-bottom: 1px solid #e3e4db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding-left: 12px;
+}
+
+.THIS commerce_checkout-order-confirmation h2 {
+    padding-left: 12px;
+    color: #003459;
+    font-size: 16px;
+}
+
+.THIS commerce_checkout-order-confirmation .slds-p-vertical_xxx-small {
+    padding-left: 12px;
+}
+
+.THIS commerce_checkout-order-confirmation .slds-button {
+    border-radius: 0;
+    padding: 4px 24px;
+}
+
+.THIS .comm-page-detail-01t .decrement-btn{
+    background-color: #fff;
+    border: none;
+}
+
+.THIS .comm-page-detail-0a6 .decrement-btn{
+    background-color: #fff;
+    border: none;   
+}
+
+.THIS b2b_buyer_cart-contents b2b_buyer_cart-managed-contents .slds-text-align_center.slds-text-color_weak {
+    text-align: left;
+}
+
+.THIS b2b_buyer_cart-managed-contents {
+    padding-left: 12px;
+}
+
+.THIS .comm-page-detail-0ZG c-csv-order .slds-grid_vertical {
+    width: 81%;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.THIS .comm-page-list-1Os c-csv-order .slds-grid_vertical{
+    width: 80%;
+    margin: auto;
+}
+
+
+
+.THIS .cb-section_column.slds-size_12-of-12.slds-max-medium-size_12-of-12.slds-large-size_3-of-12 div.ui-widget:first-child,
+.THIS .cb-section_column.slds-size_12-of-12.slds-max-medium-size_12-of-12.slds-large-size_3-of-12 div.ui-widget:first-child div {
+    background-color: #f2f2f2 !important;
+}
+
+.THIS .spinner {
+    background: transparent;
+}
+
+/* login page */
+
+.THIS .comm-page-login-home {
+		display: flex;
+		align-items: center;
+		min-height: 100%;
+		max-width: none;
+		background-size: cover;
+		background-color: #fff;
+		position: absolute;
+        width: 100%;
+        background: var(--lwc-LoginBackgroundImage,url('/sumitomorubbersouthafrica/file-asset/SumitomoTiressymbollogo3000x2000_2?v=1')) 50% 50%/cover no-repeat fixed;
+}
+
+.THIS .comm-page-login-home .siteforceContentArea{
+    width: 414px;
+    margin: auto;
+    padding: 20px;
+    background-color: #24aae1;
+}
+
+.THIS .comm-page-login-home .communityLogo{
+    width: 75%;
+    margin-bottom: 40px;
+}
+
+.THIS .comm-page-login-home .uiOutputRichText p{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.THIS .comm-page-login-home .uiOutputRichText span{
+    color: #003459 !important;
+}
+
+.THIS .comm-page-login-home .uiOutputRichText a{
+    color: #fff;
+}
+
+.THIS .comm-page-login-home .selfRegister {
+    background-color: #fff;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+}
+
+.THIS .comm-page-login-home .selfRegister a{
+    color: #003459;
+    display: block;
+    font-weight: 600;
+}
+
+.THIS .comm-page-login-home .selfRegister a:hover{
+    color: #003459;
+}
+
+.THIS .comm-page-login-home .inverseTextColor{
+    color: #003459;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.THIS .comm-page-login-home .inverseTextColor:hover{
+    color:#003459 !important;
+}
+
+.THIS .comm-page-login-home .loginButton{
+    margin-bottom: 25px;
+}
+
+.THIS .comm-page-login-home .inputContainer{
+    margin-bottom: 25px;
+}
+
+/* login page */
+
+/* PDP */
+
+
+
+.THIS .comm-page-detail-01t b2b_buyer_cart-add-quantity{
+    display: none;
+}
+
+.THIS .comm-page-detail-01t b2b_buyer_product_details-purchase-options{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.THIS .comm-page-detail-01t .quantity-list-action{
+    flex-direction: row-reverse;
+}
+
+.THIS ~.uiContainerManager .forceCommunityCommerceReorder .buttonRadius {
+    height: 40px;
+}
+
+.THIS ~.uiContainerManager .forceCommunityCommerceReorder a.slds-button {
+    height: 40px !important;
+}
+
+.THIS .navbuttonNavigationButton .slds-button.floatLeft,
+.THIS .navbuttonNavigationButton .slds-button.floatRight{
+    padding: 4px 24px;
+}
+
+.THIS header[b2b_buyer_cart-managedContents_managedContents] {
+    border-color: #e3e4db;
+}
+
+.THIS .slds-notification-badge[b2b_buyer_cart-badge_badge] {
+    background: #e3e4db;
+    color: #000;
+}
+
+.THIS .unsNotificationsCounter .countDot {
+    background: #feca0a;
+}
+
+.THIS .unsNotificationsCounter .counterLabel {
+    color: #000;
+    font-weight: normal;
+}
+
+.THIS li[b2b_buyer_cart-items_items] {
+    display: flex;
+    font-size: var(--lwc-fontSize4, 0.875rem);
+    border-bottom: none;
+}
+.THIS li[b2b_buyer_cart-items_items]:last-child {
+    border-bottom: 1px solid #e3e4db;
+}
+
+.THIS .line-item-properties[b2b_buyer_cart-items_items],
+.THIS .quantity-price-remove {
+    align-items: center;
+}
+
+.THIS .quantity-selector-promotions span {
+    margin-bottom: 0;
+}
+
+.THIS ~.forceCommunityToastManager .toastTitle {
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.THIS ~.forceCommunityToastManager .slds-notify--toast{
+    border-radius: 0;
+    min-width: 40%;
+}
+
+.THIS .forceCommunityThemeHeaderB2B .centerContainer {
+    height: 100px;
+}
+
+.cB2B_NT_Theme .dropDownListItem .slds-m-right_xx-small, .cB2B_NT_Theme .slds-m-right--xx-small p {
+    margin-right: 0;
+    color: white;
+}
+
+/* ------ */
+/* TABLET */
+/* ------ */
+@media only screen and (max-width: 1270px) {
+    .THIS .no-tablet {
+        display: none;
+    }
+    
+    .THIS body {
+        overflow-x: hidden !important;
+    }
+    
+    /* HEADER / NAVBAR */
+    .THIS .centerContainer {
+        width: 100%;
+        padding: 0 3%;
+    }
+    
+    .THIS .comm-user-profile-menu__trigger {
+        display: none;
+    }
+    
+    .THIS .logoImage {
+        max-width: 120px !important;
+    }
+    
+    /* FOOTER */
+    .THIS .footers-container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    /* FOOTER - logo & cta */
+    .THIS .links-1 .left-part{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .THIS .left-part p {
+        margin: 20px 0;
+    }
+    
+    .THIS .left-part a {
+        margin: 15px 0;
+    }
+    
+    /* FOOTER - contact */
+    .THIS .links-column {
+        padding: 0 25px !important;
+    }
+    
+    .THIS .links-2 .white-text{
+        display: none;
+    }
+    
+    /* Product Category */
+    .THIS .slds-modal__container {
+        max-width: 90% !important; 
+    }
+    
+    .THIS .slds-modal__footer .slds-button+.slds-button {
+   		margin-left: 0 !important;
+        margin-top: 2vh;
+	}
+    
+    .THIS .cB2B_NT_Theme .comm-page-detail-0ZG .slds-grid_vertical {
+        width: 100% !important;
+    }
+}
+
+
+
+
+/* ------ */
+/* MOBILE */
+/* ------ */
+@media only screen and (max-width: 600px) {
+    .THIS .no-mobile {
+        display: none;
+    }
+
+    .THIS body {
+        overflow-x: hidden !important;
+    }
+
+    /* FOOTER */
+    .THIS .footers-container {
+    	grid-template-columns: repeat(auto-fit, minmax(300px, 50%)) !important;
+	}
+    
+    /* FOOTER - logo & cta */
+    .THIS .links-1 .left-part{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .THIS .left-part p {
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .THIS .left-part a {
+        margin: 15px 0;
+        display: flex;
+        align-self: center;
+    }
+    
+    /* FOOTER - contact */
+    .THIS .links-2 {
+        margin: 20px 0;
+    }
+    
+    .THIS .links-2 .white-text{
+        display: none;
+    }
+    
+    /* HEADER / NAVBAR */
+    .THIS .centerContainer {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .THIS .themeLogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+		align-items: center;
+        padding-left: 7px;
+    }
+    
+    .THIS .logoImage {
+        max-width: 120px !important;
+    }
+    
+    .THIS .slds-m-right_xx-small {
+        color: black;
+    }
+   
+
+    
+    
+    /* Product Category */
+    .THIS .right-container[c-searchLayout_searchLayout] {
+        display: flex;
+        justify-content: center !important;
+    }
+    
+    .THIS .right-container button {
+        margin-right: 0 !important;
+    }
+    
+    .THIS .upload-section[c-csvOrder_csvOrder] {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+	.THIS .width-50[c-csvOrder_csvOrder] {
+        display: flex !important;
+        justify-content: center;
+        width: 100% !important;
+        margin-bottom: 2vh;
+    }
+    
+    .THIS .slds-align_left[c-csvOrder_csvOrder] {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important; 
+    }
+    
+    .THIS .manual[c-csvOrder_csvOrder] div[c-csvOrder_csvOrder] {
+        width: 100% !important;
+        margin-bottom: 1vh;
+    }
+    
+    /* User Profile */
+    .THIS .sf_flowmodalCcp_launchFlowModal .min-height-64px {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .THIS .sf_flowmodalCcp_launchFlowModal .min-height-64px button{
+        margin-right: 0;
+    }
+    
+    .THIS .userSettingTabs .uiTabBar {
+        width: 100% !important;
+        overflow-x: scroll;
+    }
+    
+    /* Credit Limit Banner */
+    .THIS .cB2B_CreditLimit .limits {
+        max-width: 85% !important;
+    }
+    
+    /* Marketing Rands Section */
+    .THIS .box[c-marketingRands_marketingRands] {
+        height: max-content;
+        width: 50% !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .THIS .box[c-marketingRands_marketingRands] {
+        margin: 10px !important;
+        height: fit-content !important;
+        width: 50% !important;
+        padding: 20px 0 !important;
+    }
+    
+    .THIS .title[c-marketingRands_marketingRands] {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .THIS .icon[c-marketingRands_marketingRands] {
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+    }
+    
+    .THIS .marketing-container[c-marketingRands_marketingRands] {
+        height: fit-content !important;
+    }
+
+    .THIS .value-expiring[c-marketingRands_marketingRands] {
+        font-size: 20px;
+    }
+
+    .THIS .value-earned[c-marketingRands_marketingRands] {
+        font-size: 20px;
+    }
+    
+    /* Order Summary Detail */
+    .THIS .product-detail-grid[c-orderSummaryProductsCustom_orderSummaryProductsCustom] {
+        display: block !important;
+    }
+    
+    .THIS .siteforceDesignTimeComponent, .THIS .siteforceDesignTimeSection {
+        overflow-x: scroll;
+    }
+    
+    .THIS .forceCommunityDynamicCollectionGrid .pull-padded-bottom-medium {
+        margin-bottom: 0 !important;
+    }
+
+    .cB2B_NT_Theme .comm-page-detail-0ZG .slds-grid_vertical {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Product Details */
+    .THIS b2b_buyer_wishlists-add-to-list-button[b2b_buyer_product_details-purchaseOptions_purchaseOptions] {
+        height: 2.5rem;
+        width: 100px;
+    }
+
+    .THIS .slds-m-right_xx-small, .THIS .slds-m-right--xx-small p{
+        margin-right: 0;
+    }
+
+    /* Lists */
+    .THIS b2b_buyer_cart-add-to-cart-button[b2b_buyer_wishlists-mobileDetailView_mobileDetailView] {
+        width: 100%;
+    }
+
+    /* .cB2B_NT_Theme .slds-m-right_xx-small p{
+        color: black;
+    } */
+
+    /* Orders */
+    .cB2B_NT_Theme b2b_buyer_orders-record b2b_buyer_orders-record-fields .slds-truncate.slds-p-right_small.slds-grid {
+        flex-direction: row;
+    }
+
+    .cB2B_NT_Theme .slds-no-space {
+        min-width: 45%;
+    }
+
+    .cB2B_NT_Theme b2b_buyer_orders-record-fields b2b_buyer_product_details-field-display {
+        margin-top: 0;
+    }
+
+    /* Update Member */
+    .THIS .forceCommunityUserProfileBody .cUserProfileDetailCon .forceCommunityUserProfileDetail .userDetailHeader {
+        padding-bottom: 1vh;
+        border-bottom: 0;
+        font-weight: 700;
+    }
+
+    .THIS .forcePageBlockSection .slds-form-element:not([class*="slds-size"]) {
+        display: flex;
+        margin: 2px 0;
+    }
+
+    .THIS .forcePageBlockItemView .slds-form-element__label {
+        font-weight: 600;
+        min-width: 40%;
+    }
+
+    .THIS .forceOutputAddressText.map {
+        position: relative;
+        left: -40%;
+        margin-bottom: 20px;
+    }
+
+    /* Menu */
+    /* .THIS .slds-icon .slds-icon_xx-small svg {
+        color: white;
+    } */
+
+    .THIS .slds-icon_xx-small {
+        color: white;
+    }
+}

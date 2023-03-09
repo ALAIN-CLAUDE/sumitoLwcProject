@@ -1,0 +1,8 @@
+h1 {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+tr, td, th {
+    padding: 7px;
+}

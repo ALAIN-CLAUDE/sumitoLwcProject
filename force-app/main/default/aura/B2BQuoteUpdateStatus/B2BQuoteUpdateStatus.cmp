@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-10-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component access="global" 
+                controller="UpdateB2BQuoteController"
+    			implements="forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId">
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <div class="backgroundInverse">
+        <lightning:spinner alternativeText="Loading" variant="inverse" />
+    </div>
+</aura:component>

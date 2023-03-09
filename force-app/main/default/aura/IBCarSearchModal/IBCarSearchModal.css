@@ -1,0 +1,22 @@
+.THIS {
+    background-color:rgba(220,220,220,0.8);
+}
+
+.THIS .headerClass{
+    background-color:rgb(77, 178, 245);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.THIS .footerClass {
+    background-color:rgb(77, 178, 245);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.THIS .btnIcon{
+    position: relative !Important;
+    float: right !Important;
+    top: -16px !Important;
+    right: -16px !Important;
+}

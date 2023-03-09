@@ -1,0 +1,38 @@
+.slds-modal__content{
+    overflow: initial;
+}
+
+.custom-header{
+   background-color:#003459;
+   color: #fff;
+}
+
+.custom-footer{
+   text-align: center;
+}
+
+.slds-modal__container{
+   max-width: 30%;
+}
+
+.slds-button_brand{
+   background-color: #003357;
+   padding: 5px;
+   width: 180px;
+   height: 40px;
+   color: #fff;
+   border: 1px solid #003357;
+}
+
+.slds-button_neutral{
+   border: 1px solid #003357;
+   color: #003357;
+   padding: 5px;
+   width: 180px;
+   height: 40px;
+
+}
+
+.icon-car{
+   margin-right: 20px;
+}

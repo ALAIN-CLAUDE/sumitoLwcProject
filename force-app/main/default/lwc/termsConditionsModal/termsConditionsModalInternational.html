@@ -1,0 +1,36 @@
+<template>
+		<section class="slds-modal">
+			<div class="slds-modal__container tac-modal">
+				<header class="slds-modal__header">
+					Terms & Conditions (International)
+				</header>
+				<div
+					class="slds-modal__content"
+					id="modal-content"
+				>
+					<p>
+						International <br>
+						<b>Seller’s sale of Goods and any contract resulting therefrom shall be subject to the following terms and conditions which shall apply to the exclusion of all other terms and conditions, whether express or impliedin writing or verbal,for the supply of Goods by the Sellerunless the Sellerspecifically agrees in writing to accept  any  variation  hereto.  The Purchaser,  by  accepting  delivery  of  any  Goods  pursuant  hereto, acknowledges that no terms and conditions which the Purchaserpurports to attach to its acceptance, nor any terms and conditions which might have been attached to the Purchaser’s order, shall be binding on the Seller.The Purchaseragrees that all such conditions shall be deemed to have been substituted by these terms and conditions.</b>
+					</p>
+					<p>
+						
+					</p>
+				</div>
+				<footer class="slds-modal__footer">
+					<button
+						class="slds-button slds-button_neutral"
+						onclick={handleDecline}
+						label="Decline"
+					>
+						Decline
+					</button>
+					<button class="slds-button slds-button_brand"
+						onclick={handleAccept}
+					>
+						Accept
+					</button>
+				</footer>
+			</div>
+		</section>
+		<div class="slds-backdrop"></div>
+</template>

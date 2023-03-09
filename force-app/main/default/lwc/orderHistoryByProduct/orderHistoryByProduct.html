@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-grid">
+        <table style="margin-left:10%; width:50%; text-align:right;">
+            <thead>
+                <tr>
+                    <th colspan="2">Recently Ordered / On Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:false={isEmpty}>
+                    <template for:each={orderData} for:item="ord">
+                        <tr key={ord.key}>
+                            <td>{ord.key}</td>
+                            <td style="text-align:right;">{ord.value}</td>
+                        </tr>
+                    </template>
+                </template>
+                <template if:true={isEmpty}>
+                    <tr>
+                        <td colspan="2">There is no order for this product for the past 6 months.</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>

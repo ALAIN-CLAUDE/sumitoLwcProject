@@ -1,0 +1,42 @@
+.slds-modal__footer {
+    text-align: right;
+  }
+  
+  .slds-modal__footer .view-cookies,
+  .slds-modal__footer .back-to-overview {
+    margin-right: auto;
+  }
+
+  .slds-modal{
+    width: 60vw !important;
+    height: 60vh !important;
+    opacity: 100;
+  }
+
+  .slds-modal__content{
+    padding: 24px;
+  }
+
+  .slds-modal__header{
+    font-size: 24px;
+  }
+
+  /* MODAL TEXT */
+  h1 {
+    font-weight: 600;
+    margin-bottom: 2vh;
+  }
+  @media (max-width: 768px) {
+    .slds-modal__footer {
+      flex-direction: column;
+    }
+  
+    .slds-modal__footer .slds-button {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .slds-modal__footer .slds-button:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }

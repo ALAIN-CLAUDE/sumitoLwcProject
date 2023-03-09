@@ -1,0 +1,71 @@
+<aura:component  access="global" 
+                controller="IBCarSearchModalCtrl">
+    <!-- Event Handler Declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    
+    <!-- Attribute Declaration -->
+    <aura:attribute name="vehicles" type="List" access="public" />
+    <aura:attribute name="products" type="List" access="public" />
+    <aura:attribute name="isOpen" type="boolean" default="false" access="public"/>
+    <aura:attribute name="isLoadingOpen" type="boolean" default="false" access="public"/>
+    <aura:attribute name="isSearchDisabled" type="boolean" default="true" access="private"/>
+    <aura:attribute name="manufacturers" type="List" access="private" />
+    <aura:attribute name="types" type="List" access="private" />
+    <aura:attribute name="modelYears" type="List" access="private" />
+    <aura:attribute name="models" type="List" access="private" />
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header headerClass">
+                <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeModel}" alternativeText="close" variant="bare-inverse" class="slds-modal__close btnIcon"/>
+
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                    Search by Vehicle
+                </h2>
+            </header>
+            
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div class="">
+                    <div class="">
+                        <lightning:select aura:id="manufacturer" class="field" label="Manufacturer" onchange="{!c.manfctrChanged}">
+                                <option text="--Please Select Manufacturer--" value=""/>
+                            <aura:iteration items="{!v.manufacturers}" var="item">
+                                <option text="{!item}" value="{!item}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div><br/>
+                    <div class="">
+                        <lightning:select aura:id="type" class="field" label="Type" onchange="{!c.typeChanged}">
+                                <option text="--Please Select Type--" value=""/>
+                            <aura:iteration items="{!v.types}" var="item">
+                                <option text="{!item}" value="{!item}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div><br/>
+                    <div class="">
+                        <lightning:select aura:id="modelYear" class="field" label="Model Year" onchange="{!c.modelYearChanged}">
+                                <option text="--Please Select Model Year--" value=""/>
+                            <aura:iteration items="{!v.modelYears}" var="item">
+                                <option text="{!item}" value="{!item}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div><br/>
+                    <div class="">
+                        <lightning:select aura:id="model" class="field" label="Model" onchange="{!c.modelChanged}">
+                                <option text="--Please Select Model--" value=""/>
+                            <aura:iteration items="{!v.models}" var="item">
+                                <option text="{!item}" value="{!item}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="slds-modal__footer footerClass">
+                <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{!c.closeModel}"/>
+                <lightning:button variant="brand" label="Search" title="Search" onclick="{!c.search}" disabled="{!v.isSearchDisabled}"/>
+            </footer>
+        </div>
+    </section>
+</aura:component>

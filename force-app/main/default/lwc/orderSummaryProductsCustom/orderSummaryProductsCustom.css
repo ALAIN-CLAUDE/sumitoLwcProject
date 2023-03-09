@@ -1,0 +1,31 @@
+div.product-detail-grid {
+    margin-top: -2%;
+}
+
+div.sub-title {
+    margin-left: 3%;
+}
+
+hr {
+    margin-top: 2%;
+}
+
+img.product-image {
+    max-width: 75px;
+    height: auto;
+}
+
+h3.product-title {
+    font-size:16px; 
+    color: #003459; 
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+h3.product-title:hover {
+    text-decoration: underline;
+}
+
+div.acc-vertical {
+    margin-left: 11%;
+}
